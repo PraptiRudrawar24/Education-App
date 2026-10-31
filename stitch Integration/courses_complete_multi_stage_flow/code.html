@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Courses Flow - Teal Learning Platform</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#eff4ff",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#9cf2e8",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#80d5cb",
+            "on-background": "#0d1c2f",
+            "surface-dim": "#ccdbf4",
+            "surface-container-high": "#dde9ff",
+            "outline": "#6e7977",
+            "surface": "#f8f9ff",
+            "on-primary-container": "#a3faef",
+            "on-tertiary-container": "#dfedea",
+            "tertiary-fixed": "#d7e5e2",
+            "surface-bright": "#f8f9ff",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "secondary-container": "#6df5e1",
+            "on-tertiary-fixed-variant": "#3d4947",
+            "inverse-primary": "#80d5cb",
+            "on-secondary-container": "#006f64",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "surface-tint": "#006a63",
+            "secondary": "#0d9488",
+            "inverse-on-surface": "#ebf1ff",
+            "on-primary-fixed": "#00201d",
+            "tertiary-fixed-dim": "#bcc9c7",
+            "tertiary": "#475452",
+            "on-surface": "#0d1c2f",
+            "on-error": "#ffffff",
+            "inverse-surface": "#233144",
+            "primary-container": "#0f766e",
+            "on-primary-fixed-variant": "#00504a",
+            "tertiary-container": "#5f6c6a",
+            "on-surface-variant": "#3e4947",
+            "secondary-fixed-dim": "#4fdbc8",
+            "on-secondary": "#ffffff",
+            "surface-container": "#e6eeff",
+            "secondary-fixed": "#71f8e4",
+            "surface-variant": "#d5e3fd",
+            "on-secondary-fixed": "#00201c",
+            "outline-variant": "#bdc9c6",
+            "surface-container-highest": "#d5e3fd",
+            "on-secondary-fixed-variant": "#005048",
+            "background": "#f8f9ff",
+            "on-tertiary-fixed": "#121e1c",
+            "primary": "#0f766e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.75rem",
+            "gutter": "1rem",
+            "gutter-sm": "0.75rem",
+            "space-xs": "0.25rem",
+            "margin": "1.25rem",
+            "space-lg": "1.25rem",
+            "margin-lg": "1.5rem",
+            "space-2xl": "2.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide scrollbars for streamlined mobile flow */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #a7f3d0 0%, #99f6e4 25%, #bae6fd 60%, #e0e7ff 100%);
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body class="text-on-surface antialiased min-h-screen flex justify-center pb-24 select-none">
+<!-- Main Mobile Wrap Frame (Optimized 430px canvas capped at max-w-lg) -->
+<div class="w-full max-w-lg bg-transparent min-h-screen flex flex-col relative shadow-2xl border-x border-white/50">
+<!-- Top Shared Component: TopAppBar with Frosted Glass -->
+<header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-white/60 shadow-sm">
+<div class="flex justify-between items-center w-full px-5 py-3.5 max-w-2xl mx-auto">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-teal-50 border border-teal-200/80 flex items-center justify-center text-primary shadow-xs overflow-hidden">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-teal-800/80 font-medium">Welcome back</div>
+<h1 class="text-headline-sm font-headline-sm font-bold text-teal-900 tracking-tight">Hello, Alex</h1>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<button aria-label="Notifications" class="p-2 rounded-full text-teal-800 hover:bg-teal-50/80 transition-all active:scale-95 relative border border-white/60 bg-white/70 shadow-xs" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-teal-600 ring-2 ring-white"></span>
+</button>
+</div>
+</div>
+<!-- Stage Flow Switcher (Interactive Flow Demonstration Bar) -->
+<div class="px-4 py-2.5 bg-white/80 backdrop-blur-sm border-t border-teal-100/60 flex items-center justify-between overflow-x-auto no-scrollbar gap-1.5">
+<button class="stage-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md whitespace-nowrap bg-primary text-white font-semibold shadow-sm transition-all active:scale-95" id="stage-btn-1" onclick="switchStage(1)">1. Catalogue</button>
+<button class="stage-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md whitespace-nowrap bg-white/90 text-on-surface-variant border border-teal-100/80 hover:bg-teal-50/60 transition-all active:scale-95" id="stage-btn-2" onclick="switchStage(2)">2. Details</button>
+<button class="stage-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md whitespace-nowrap bg-white/90 text-on-surface-variant border border-teal-100/80 hover:bg-teal-50/60 transition-all active:scale-95" id="stage-btn-3" onclick="switchStage(3)">3. Checkout</button>
+<button class="stage-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md whitespace-nowrap bg-white/90 text-on-surface-variant border border-teal-100/80 hover:bg-teal-50/60 transition-all active:scale-95" id="stage-btn-4" onclick="switchStage(4)">4. Coupons</button>
+<button class="stage-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md whitespace-nowrap bg-white/90 text-on-surface-variant border border-teal-100/80 hover:bg-teal-50/60 transition-all active:scale-95" id="stage-btn-5" onclick="switchStage(5)">5. Status</button>
+</div>
+</header>
+<!-- CONTENT CANVAS CONTAINER -->
+<main class="flex-1 w-full px-4 pt-4 pb-28">
+<!-- ============================================== -->
+<!-- STAGE 1: COURSE CATALOGUE                      -->
+<!-- ============================================== -->
+<section class="stage-view flex flex-col space-y-4" id="stage-1">
+<!-- Search & Filter Controls (Frosted Glass) -->
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-3 text-teal-700/70 pointer-events-none" data-icon="search">search</span>
+<input class="w-full h-11 pl-10 pr-9 bg-white/90 backdrop-blur-md border border-white/80 rounded-2xl text-body-sm font-body-sm text-on-surface placeholder:text-teal-900/40 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-600 transition-all" id="courseSearch" oninput="handleSearch(this.value)" placeholder="Search TCS, Banking, GATE..." type="text" value=""/>
+<button aria-label="Clear search" class="absolute right-2.5 top-2.5 text-teal-700/60 hover:text-on-surface p-1 rounded-full" onclick="clearSearch()" type="button">
+<span class="material-symbols-outlined text-body-sm" data-icon="close">close</span>
+</button>
+</div>
+<button class="h-11 px-3.5 bg-white/90 backdrop-blur-md border border-white/80 text-primary font-label-md rounded-2xl flex items-center gap-1.5 hover:bg-white shadow-sm transition-all active:scale-95" onclick="toggleFilterDrawer()" type="button">
+<span class="material-symbols-outlined text-body-md text-primary" data-icon="tune">tune</span>
+<span class="font-label-md font-semibold">Filter</span>
+</button>
+</div>
+<!-- Exam Filter Carousel -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="category-chip px-4 py-2 rounded-full text-label-md font-label-md border transition-all shrink-0 bg-primary text-white font-semibold border-primary shadow-xs" onclick="setExamFilter(this, 'all')">All Courses</button>
+<button class="category-chip px-4 py-2 rounded-full text-label-md font-label-md border border-white/80 bg-white/90 backdrop-blur-md text-on-surface-variant hover:bg-white shadow-xs transition-all shrink-0" onclick="setExamFilter(this, 'tcs')">TCS Aptitude</button>
+<button class="category-chip px-4 py-2 rounded-full text-label-md font-label-md border border-white/80 bg-white/90 backdrop-blur-md text-on-surface-variant hover:bg-white shadow-xs transition-all shrink-0" onclick="setExamFilter(this, 'banking')">Banking Pre-Aptitude</button>
+<button class="category-chip px-4 py-2 rounded-full text-label-md font-label-md border border-white/80 bg-white/90 backdrop-blur-md text-on-surface-variant hover:bg-white shadow-xs transition-all shrink-0" onclick="setExamFilter(this, 'gate')">GATE Preparation</button>
+<button class="category-chip px-4 py-2 rounded-full text-label-md font-label-md border border-white/80 bg-white/90 backdrop-blur-md text-on-surface-variant hover:bg-white shadow-xs transition-all shrink-0" onclick="setExamFilter(this, 'campus')">Campus Placement</button>
+</div>
+<!-- Meta count & Sorting -->
+<div class="flex justify-between items-center px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-teal-500 shadow-xs"></span>
+<p class="text-label-md font-label-md text-teal-950 font-bold" id="course-count-label">14 Courses Available</p>
+</div>
+<span class="text-label-sm font-label-sm text-teal-900/60 font-medium">Updated 2 hrs ago</span>
+</div>
+<!-- Course Cards List -->
+<div class="grid grid-cols-1 gap-4" id="coursesGrid">
+<!-- Card 1: TCS National Masterclass (Enrolled) -->
+<article class="bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl p-4 shadow-sm hover:shadow-md hover:border-teal-300 transition-all flex flex-col justify-between">
+<div class="flex gap-3.5">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0 relative bg-teal-50 border border-teal-100 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="A focused digital education classroom visual featuring students learning high level aptitude formulas with teal and clean white glowing graphical charts on a modern laptop monitor screen in high key soft morning lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClvthMPTQKoTxkQ8ezLWAnAOzRznQLS14-1w9re71ydzbVYVqPn_VLrVa-0cmnWPPBjJb5P2TkXW9LtHcksV5VoINLUohI6cvaPZ50rok1Zlyw-TBC0MpN5KyEu4_BG71xBGB5A0-IpOqp70vrOUyRKTLdx7BLo2TaYJWPsb3rebIrfPuSIwoq-JFHDrKAxOBfpJ_NdjAtCqeAwJABSyIOn3g7PEWjlP0DvSXkSpT5"/>
+<span class="absolute top-1.5 left-1.5 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs tracking-wide uppercase">Enrolled</span>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-teal-700 font-bold uppercase tracking-wider">TCS NQT 2025</span>
+<div class="flex items-center text-label-sm font-label-sm text-on-surface-variant font-bold bg-amber-50/90 border border-amber-200/80 px-1.5 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-amber-500 text-body-sm mr-0.5" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span> 4.9 (1.2k)
+                    </div>
+</div>
+<h2 class="text-body-md font-headline-sm text-slate-900 font-bold line-clamp-1 mt-1">TCS National Aptitude &amp; Foundation Masterclass</h2>
+<p class="text-label-sm font-body-sm text-slate-600 mt-0.5 line-clamp-1">Numerical ability, verbal reasoning &amp; coding essentials</p>
+</div>
+<div class="flex items-center gap-3 text-label-sm font-label-sm text-slate-600 mt-2">
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-label-md text-primary" data-icon="play_circle">play_circle</span> 64 Lessons</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-label-md text-primary" data-icon="description">description</span> 32 Notes</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-label-md text-primary" data-icon="schedule">schedule</span> 6 Months</span>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-teal-100/60 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-slate-600 font-semibold">Progress (68%)</span>
+<div class="w-28 h-1.5 bg-slate-100 rounded-full overflow-hidden mt-1 ring-1 ring-slate-200/50">
+<div class="w-8/12 h-full bg-primary rounded-full"></div>
+</div>
+</div>
+<button class="px-4 py-2 bg-teal-100 text-primary hover:bg-teal-200 font-label-lg font-bold rounded-xl flex items-center gap-1 transition-all active:scale-95 shadow-xs" onclick="goToDetails('TCS Masterclass', 2499, 'TCS Aptitude', 64, 32)">
+<span class="">Continue</span>
+<span class="material-symbols-outlined text-body-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Banking Quantitative Prep (New / Buyable) -->
+<article class="bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl p-4 shadow-sm hover:shadow-md hover:border-teal-300 transition-all flex flex-col justify-between">
+<div class="flex gap-3.5">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0 relative bg-teal-50 border border-teal-100 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="A modern financial mathematics study desk with clean notebook, elegant teal ballpoint pen, statistics infographics on a tablet display, soft warm natural daylight casting gentle shadows on white slate surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADrpTQ_54zJHvl_IE9KR_clXOLkIQzeU-qV0v3H942gOQCW2tL27WzBQ8AZPXe9McjKGjnEWv166IEnrySHj9xiony7YrcCstZALB2GuQzOVtrIfqpq4WGwv5ZoOvULUbKmuyYJ0ulQ5v5BdpLX0rhSvodNaS7a_LwSzur_P6j5uJUh_xo9sNkilSFJnZ60z4uaqKtUkiA26k2gLmakLM-xwtmxsSGSVrj27qngKtv"/>
+<span class="absolute top-1.5 left-1.5 bg-amber-500 text-white font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded shadow-xs">Bestseller</span>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-teal-700 font-bold uppercase tracking-wider">IBPS &amp; SBI PO</span>
+<div class="flex items-center text-label-sm font-label-sm text-on-surface-variant font-bold bg-amber-50/90 border border-amber-200/80 px-1.5 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-amber-500 text-body-sm mr-0.5" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span> 4.8 (840)
+                    </div>
+</div>
+<h2 class="text-body-md font-headline-sm text-slate-900 font-bold line-clamp-1 mt-1">Speed Maths &amp; Data Interpretation Sprint</h2>
+<p class="text-label-sm font-body-sm text-slate-600 mt-0.5 line-clamp-1">Vedic arithmetic shortcuts, tables, and caselet formulas</p>
+</div>
+<div class="flex items-center gap-3 text-label-sm font-label-sm text-slate-600 mt-2">
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-label-md text-primary" data-icon="play_circle">play_circle</span> 48 Lessons</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-label-md text-primary" data-icon="description">description</span> 24 Notes</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-label-md text-primary" data-icon="calendar_month">calendar_month</span> 1 Year</span>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-teal-100/60 flex items-center justify-between">
+<div class="flex items-baseline gap-1.5">
+<span class="text-headline-sm font-headline-sm font-extrabold text-teal-900">₹1,999</span>
+<span class="text-label-sm font-label-sm text-slate-400 line-through font-medium">₹3,999</span>
+<span class="text-label-sm font-label-sm text-emerald-700 font-bold bg-emerald-100/80 px-1.5 py-0.5 rounded">50% OFF</span>
+</div>
+<button class="px-4 py-2 bg-primary text-white hover:bg-teal-800 font-label-lg font-bold rounded-xl flex items-center gap-1 transition-all active:scale-95 shadow-sm" onclick="goToDetails('Speed Maths Sprint', 1999, 'Banking Pre-Aptitude', 48, 24)">
+<span class="">View Details</span>
+<span class="material-symbols-outlined text-body-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 3: GATE General Aptitude & Discrete Maths -->
+<article class="bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl p-4 shadow-sm hover:shadow-md hover:border-teal-300 transition-all flex flex-col justify-between">
+<div class="flex gap-3.5">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0 relative bg-teal-50 border border-teal-100 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="An organized engineering student workspace displaying architectural mathematics diagrams, clean white desk, teal mechanical pencil and structured study notes in calm ambient teal room lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhoKITkgEyO22N5VWEG-2woHc-fPhzAHGmIjA4f8XJ7j10MwqNttsizCPhpYvdxyk4FBckRwt7NVmbwYrvsn6rOW86Y1UtCKnXKTOoEwKXpAdssJI2GQKyZ4xT0xfCWwnq9U_xZ1cUsMBEe8BWWKC6L0XWN-s-CzxgBW5ddVKpFyINJ7HGQr6iP5DhGVQxu0NTmfRXw5EGf4jIihDgyUMVJXXPELSkqjRRO4B0c62P"/>
+<span class="absolute top-1.5 left-1.5 bg-teal-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shadow-xs">Top Rated</span>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-teal-700 font-bold uppercase tracking-wider">GATE CS &amp; IT</span>
+<div class="flex items-center text-label-sm font-label-sm text-on-surface-variant font-bold bg-amber-50/90 border border-amber-200/80 px-1.5 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-amber-500 text-body-sm mr-0.5" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span> 4.95 (2.4k)
+                    </div>
+</div>
+<h2 class="text-body-md font-headline-sm text-slate-900 font-bold line-clamp-1 mt-1">GATE Complete Engineering Aptitude 2026</h2>
+<p class="text-label-sm font-body-sm text-slate-600 mt-0.5 line-clamp-1">Spatial reasoning, combinatorics, calculus &amp; probability</p>
+</div>
+<div class="flex items-center gap-3 text-label-sm font-label-sm text-slate-600 mt-2">
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-label-md text-primary" data-icon="play_circle">play_circle</span> 82 Lessons</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-label-md text-primary" data-icon="description">description</span> 45 Notes</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-label-md text-primary" data-icon="verified">verified</span> 2 Years</span>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-teal-100/60 flex items-center justify-between">
+<div class="flex items-baseline gap-1.5">
+<span class="text-headline-sm font-headline-sm font-extrabold text-teal-900">₹2,499</span>
+<span class="text-label-sm font-label-sm text-slate-400 line-through font-medium">₹4,999</span>
+<span class="text-label-sm font-label-sm text-emerald-700 font-bold bg-emerald-100/80 px-1.5 py-0.5 rounded">50% OFF</span>
+</div>
+<button class="px-4 py-2 bg-primary text-white hover:bg-teal-800 font-label-lg font-bold rounded-xl flex items-center gap-1 transition-all active:scale-95 shadow-sm" onclick="goToDetails('GATE General Aptitude', 2499, 'GATE Preparation', 82, 45)">
+<span class="">View Details</span>
+<span class="material-symbols-outlined text-body-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- STAGE 2: COURSE DETAILS                        -->
+<!-- ============================================== -->
+<section class="stage-view hidden flex-col space-y-4" id="stage-2">
+<!-- Navigation Back Row -->
+<div class="flex items-center justify-between">
+<button class="flex items-center gap-1.5 text-label-lg font-label-lg font-bold text-teal-900 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-xl border border-white/80 shadow-xs hover:bg-white" onclick="switchStage(1)">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span> Back to Courses
+          </button>
+<div class="flex items-center gap-2">
+<button aria-label="Share" class="p-2 rounded-xl bg-white/90 backdrop-blur-sm border border-white/80 text-teal-800 hover:bg-white shadow-xs" type="button">
+<span class="material-symbols-outlined text-body-sm" data-icon="share">share</span>
+</button>
+<button aria-label="Bookmark" class="p-2 rounded-xl bg-white/90 backdrop-blur-sm border border-white/80 text-teal-800 hover:bg-white shadow-xs" type="button">
+<span class="material-symbols-outlined text-body-sm" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Banner Media Card -->
+<div class="relative rounded-2xl overflow-hidden border border-white/80 bg-white/90 shadow-sm aspect-video">
+<img class="w-full h-full object-cover" data-alt="An immersive high tech learning classroom mockup with holographic aptitude equations in soft teal tones, clean slate minimalist UI graphs, focused student aesthetic with warm morning rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqJIHAIBb3PtEPJtS9rEXSslIuM6yAuCr6Jr5BflU79s21KXEYUqngG65nLeSqa0GD1HWLsOl1qp2ELirk_e-ij7zlPvr70EyO5ZO0y6bxgLv13TV35qXiDUpEjN37Ar7NzgR4kGznTATgVBZ9TL5OV_dZgW-3iA9Ys4ATrZjGPCK58ArmgSF0NhPU-2_qT3BAy7iDwW1s1dBRlvV-vpPDBfX-tzAwGlZyIIkEUIpH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-transparent flex items-end p-4">
+<div class="text-white">
+<span class="px-2.5 py-0.5 rounded bg-primary text-white text-[11px] font-bold uppercase tracking-wider shadow-xs" id="detail-category-badge">Campus Placement</span>
+<h2 class="text-headline-sm font-headline-sm font-bold mt-1 text-white leading-tight" id="detail-title">Speed Maths &amp; Data Interpretation Sprint</h2>
+<p class="text-label-sm font-body-sm text-teal-100 flex items-center gap-2 mt-1 font-medium">
+<span class="">By Dr. Raman Iyer</span> • <span class="">English &amp; Hindi</span> • <span class="">Updated 2025</span>
+</p>
+</div>
+</div>
+<!-- Play Preview Floating Pill -->
+<button class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full text-label-sm font-label-sm font-bold text-primary flex items-center gap-1 shadow-md hover:bg-white transition-all border border-white/80" onclick="alert('Sample preview video loading...')" type="button">
+<span class="material-symbols-outlined text-body-sm" data-icon="play_circle">play_circle</span> Preview
+          </button>
+</div>
+<!-- Course Highlights Grid (Frosted Glass) -->
+<div class="grid grid-cols-2 gap-2.5">
+<div class="p-3.5 bg-white/90 backdrop-blur-md rounded-2xl border border-white/80 flex items-center gap-3 shadow-xs">
+<div class="w-9 h-9 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-body-md" data-icon="smart_display">smart_display</span>
+</div>
+<div>
+<p class="text-headline-sm font-headline-sm font-bold text-slate-900" id="detail-lessons-count">48</p>
+<p class="text-label-sm font-label-sm text-slate-600 font-medium">HD Video Lectures</p>
+</div>
+</div>
+<div class="p-3.5 bg-white/90 backdrop-blur-md rounded-2xl border border-white/80 flex items-center gap-3 shadow-xs">
+<div class="w-9 h-9 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-body-md" data-icon="auto_stories">auto_stories</span>
+</div>
+<div>
+<p class="text-headline-sm font-headline-sm font-bold text-slate-900" id="detail-notes-count">24</p>
+<p class="text-label-sm font-label-sm text-slate-600 font-medium">Annotated PDFs</p>
+</div>
+</div>
+<div class="p-3.5 bg-white/90 backdrop-blur-md rounded-2xl border border-white/80 flex items-center gap-3 shadow-xs">
+<div class="w-9 h-9 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-body-md" data-icon="quiz">quiz</span>
+</div>
+<div>
+<p class="text-headline-sm font-headline-sm font-bold text-slate-900">15</p>
+<p class="text-label-sm font-label-sm text-slate-600 font-medium">Timed Mock Exams</p>
+</div>
+</div>
+<div class="p-3.5 bg-white/90 backdrop-blur-md rounded-2xl border border-white/80 flex items-center gap-3 shadow-xs">
+<div class="w-9 h-9 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-body-md" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<div>
+<p class="text-headline-sm font-headline-sm font-bold text-slate-900">Verified</p>
+<p class="text-label-sm font-label-sm text-slate-600 font-medium">Govt Certificate</p>
+</div>
+</div>
+</div>
+<!-- Instructor Profile Card -->
+<div class="p-4 bg-white/90 backdrop-blur-md border border-white/80 rounded-2xl flex items-center gap-3.5 shadow-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-teal-200 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="A portrait photograph of a confident and approachable university mathematics professor wearing professional attire with soft natural rim lighting and clean minimal teal colored studio backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsVtAH9Yds-C4grLjgJ9xNc40cMixi3JtKkKHbvLjgaf1q3SpSCSR1V09LDqweru6r2exDrXIPojvrDS-ZRE_eL_ssXe5raP_rE9EJeJbZXSogE-yC67WwVygTTqqjRaOTZ6Hxn77EwZHcgGMvvl5iGrmSG5c2ulZRL-LF4s892B3uSXnRK442BaasqVpinbviigf_IPSVnE7oxCa0_usp-qpTDXf0geIQrv3GHYCd"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-1.5">
+<h3 class="text-body-md font-headline-sm font-bold text-slate-900">Dr. Raman Iyer</h3>
+<span class="material-symbols-outlined text-primary text-body-sm" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-label-sm font-label-sm text-slate-600 font-medium">Former IIM-A Aptitude Coach • 12+ Years Experience</p>
+</div>
+</div>
+<!-- Course Syllabus Accordions (CourseSyllabus) -->
+<div class="space-y-2">
+<h3 class="text-body-lg font-headline-sm font-bold text-slate-900 flex items-center justify-between px-1">
+<span class="">Course Syllabus</span>
+<span class="text-label-sm font-label-sm text-primary font-bold bg-teal-50 px-2 py-0.5 rounded-md border border-teal-200/60">4 Modules Total</span>
+</h3>
+<!-- Module 1 -->
+<div class="border border-white/80 rounded-2xl overflow-hidden bg-white/95 backdrop-blur-md shadow-xs">
+<button class="w-full p-3.5 flex justify-between items-center text-left bg-teal-50/50 hover:bg-teal-50 transition-all" onclick="toggleAccordion('module-1-body', 'mod-1-icon')">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-teal-100 text-teal-800 text-label-sm font-label-sm font-bold flex items-center justify-center">01</span>
+<div>
+<h4 class="text-body-md font-headline-sm font-bold text-slate-900">Foundation: Vedic Speed Techniques</h4>
+<p class="text-label-sm font-label-sm text-slate-600 font-medium">8 Lessons • 2 Quizzes • 45 Mins</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-teal-800 transition-transform rotate-180" data-icon="expand_more" id="mod-1-icon">expand_more</span>
+</button>
+<div class="p-3 space-y-2 text-body-sm font-body-sm" id="module-1-body">
+<div class="flex items-center justify-between py-2 border-b border-teal-50">
+<div class="flex items-center gap-2 text-slate-800 font-medium">
+<span class="material-symbols-outlined text-primary text-body-sm" data-icon="play_circle">play_circle</span>
+<span class="">1.1 Fast Multiplication &amp; Squares</span>
+</div>
+<span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200">Free Preview</span>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-teal-50">
+<div class="flex items-center gap-2 text-slate-800 font-medium">
+<span class="material-symbols-outlined text-primary text-body-sm" data-icon="play_circle">play_circle</span>
+<span class="">1.2 Percentage Reciprocal Memory Tables</span>
+</div>
+<span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200">Free Preview</span>
+</div>
+<div class="flex items-center justify-between py-2 text-slate-500">
+<div class="flex items-center gap-2 font-medium">
+<span class="material-symbols-outlined text-slate-400 text-body-sm" data-icon="lock">lock</span>
+<span class="">1.3 Division Approximation in 3 Seconds</span>
+</div>
+<span class="text-label-sm font-label-sm text-slate-400 font-mono">14:20</span>
+</div>
+</div>
+</div>
+<!-- Module 2 -->
+<div class="border border-white/80 rounded-2xl overflow-hidden bg-white/95 backdrop-blur-md shadow-xs">
+<button class="w-full p-3.5 flex justify-between items-center text-left bg-white/90 hover:bg-teal-50/50 transition-all" onclick="toggleAccordion('module-2-body', 'mod-2-icon')">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 text-label-sm font-label-sm font-bold flex items-center justify-center">02</span>
+<div>
+<h4 class="text-body-md font-headline-sm font-bold text-slate-900">Data Interpretation &amp; Radar Charts</h4>
+<p class="text-label-sm font-label-sm text-slate-600 font-medium">14 Lessons • 6 Case Studies</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-teal-800 transition-transform" data-icon="expand_more" id="mod-2-icon">expand_more</span>
+</button>
+<div class="p-3 space-y-2 text-body-sm font-body-sm hidden" id="module-2-body">
+<div class="flex items-center justify-between py-2 border-b border-teal-50 text-slate-600">
+<div class="flex items-center gap-2 font-medium">
+<span class="material-symbols-outlined text-slate-400 text-body-sm" data-icon="lock">lock</span>
+<span class="">2.1 Missing Data Table Decoding</span>
+</div>
+<span class="text-label-sm font-label-sm text-slate-400 font-mono">22:15</span>
+</div>
+<div class="flex items-center justify-between py-2 text-slate-600">
+<div class="flex items-center gap-2 font-medium">
+<span class="material-symbols-outlined text-slate-400 text-body-sm" data-icon="lock">lock</span>
+<span class="">2.2 Dual Axis Graph Synthesis</span>
+</div>
+<span class="text-label-sm font-label-sm text-slate-400 font-mono">18:40</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom CoursePurchaseCard in Stage 2 -->
+<div class="p-4 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl shadow-lg flex items-center justify-between mt-6">
+<div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-md font-headline-md font-extrabold text-teal-900" id="detail-purchase-price">₹1,999</span>
+<span class="text-label-md font-label-md text-slate-400 line-through font-medium" id="detail-original-price">₹3,999</span>
+</div>
+<p class="text-label-sm font-label-sm text-emerald-700 font-bold">Valid 1 Semester • 100% Guaranteed</p>
+</div>
+<button class="px-5 py-3 bg-primary text-white hover:bg-teal-800 font-label-lg font-bold rounded-xl flex items-center gap-2 shadow-md transition-all active:scale-95" onclick="goToCheckout()">
+<span class="">Enroll Now</span>
+<span class="material-symbols-outlined text-body-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- STAGE 3: CHECKOUT                              -->
+<!-- ============================================== -->
+<section class="stage-view hidden flex-col space-y-4" id="stage-3">
+<!-- Breadcrumb / Back button -->
+<div class="flex items-center justify-between">
+<button class="flex items-center gap-1 text-label-lg font-label-lg font-bold text-teal-900 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-xl border border-white/80 shadow-xs hover:bg-white" onclick="switchStage(2)">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span> Course Details
+          </button>
+<span class="text-label-sm font-label-sm px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-200 shadow-xs">SSL Secured 256-Bit</span>
+</div>
+<!-- Verified Student Profile Summary -->
+<div class="p-4 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center shadow-xs">
+              AL
+            </div>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-slate-900">Alex Mercer</p>
+<p class="text-label-sm font-label-sm text-slate-600 font-medium">alex.mercer@learning.edu • +91 98765 43210</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<!-- Selected Course Mini Card -->
+<div class="p-3.5 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl flex items-center gap-3 shadow-xs">
+<div class="w-14 h-14 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-headline-sm text-primary" data-icon="school">school</span>
+</div>
+<div class="flex-1">
+<h4 class="text-body-md font-headline-sm font-bold text-slate-900 line-clamp-1" id="checkout-course-title">Speed Maths &amp; Data Interpretation Sprint</h4>
+<p class="text-label-sm font-label-sm text-slate-600 font-medium">Access: 12 Months Validity • Full Syllabus</p>
+</div>
+<span class="text-headline-sm font-headline-sm font-extrabold text-teal-900" id="checkout-item-base-price">₹1,999</span>
+</div>
+<!-- Quick Coupon Trigger Box (Links to Stage 4 or inlines) -->
+<div class="p-4 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl shadow-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-primary" data-icon="sell">sell</span>
+</div>
+<div>
+<span class="text-body-sm font-headline-sm font-bold text-slate-900">Coupon or Voucher</span>
+<p class="text-label-sm font-label-sm text-emerald-700 font-bold" id="checkout-coupon-status">Use 'CRACK2025' for 40% Off</p>
+</div>
+</div>
+<button class="px-3.5 py-1.5 bg-teal-50 border border-teal-200 text-primary font-label-md font-bold rounded-xl hover:bg-teal-100 transition-all active:scale-95" onclick="switchStage(4)">
+              Select Coupon
+            </button>
+</div>
+</div>
+<!-- Payment Methods Selector -->
+<div class="space-y-2">
+<label class="text-label-lg font-label-lg font-bold text-slate-900 px-1">Select Payment Gateway</label>
+<div class="space-y-2">
+<!-- UPI -->
+<label class="flex items-center justify-between p-4 bg-white/95 backdrop-blur-md border-2 border-teal-600 rounded-2xl cursor-pointer shadow-xs">
+<div class="flex items-center gap-3">
+<input checked="" class="text-teal-600 focus:ring-teal-500 h-4 w-4" name="payment_method" type="radio" value="upi"/>
+<div>
+<p class="text-body-sm font-headline-sm font-bold text-slate-900">Instant UPI (GPay, PhonePe, Paytm)</p>
+<p class="text-label-sm font-label-sm text-emerald-700 font-semibold">Zero convenience fee • Instant activation</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-headline-sm" data-icon="qr_code_2">qr_code_2</span>
+</label>
+<!-- Card -->
+<label class="flex items-center justify-between p-4 bg-white/90 backdrop-blur-md border border-white/80 rounded-2xl cursor-pointer hover:border-teal-300 shadow-xs">
+<div class="flex items-center gap-3">
+<input class="text-teal-600 focus:ring-teal-500 h-4 w-4" name="payment_method" type="radio" value="card"/>
+<div>
+<p class="text-body-sm font-headline-sm font-bold text-slate-900">Credit / Debit Card</p>
+<p class="text-label-sm font-label-sm text-slate-500 font-medium">Visa, Mastercard, RuPay &amp; EMI</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-headline-sm" data-icon="credit_card">credit_card</span>
+</label>
+</div>
+</div>
+<!-- Verified Order Breakdown (OrderSummary) -->
+<div class="p-4 bg-white/95 backdrop-blur-md rounded-2xl border border-white/80 space-y-2.5 text-body-sm font-body-sm shadow-xs">
+<h4 class="text-label-lg font-label-lg font-bold text-slate-900 mb-2">Order Price Summary</h4>
+<div class="flex justify-between text-slate-600 font-medium">
+<span class="">Course List Price</span>
+<span class="text-slate-900" id="summary-original-price">₹3,999.00</span>
+</div>
+<div class="flex justify-between text-slate-600 font-medium">
+<span class="">Standard Course Discount</span>
+<span class="text-emerald-700 font-bold" id="summary-standard-discount">- ₹2,000.00</span>
+</div>
+<div class="flex justify-between text-slate-600 font-medium" id="coupon-row" style="display: none;">
+<span class="flex items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined text-label-md" data-icon="confirmation_number">confirmation_number</span>
+<span class="" id="applied-coupon-name">Coupon Discount</span>
+</span>
+<span class="text-primary font-bold" id="summary-coupon-discount">- ₹0.00</span>
+</div>
+<div class="flex justify-between text-slate-600 font-medium">
+<span class="">GST &amp; Educational Cess (18%)</span>
+<span class="text-slate-900" id="summary-tax-price">₹359.82</span>
+</div>
+<div class="pt-2.5 border-t border-teal-100 flex justify-between items-baseline font-bold">
+<span class="text-body-lg text-slate-900">Final Payable</span>
+<span class="text-headline-md font-headline-md font-extrabold text-teal-900" id="summary-final-total">₹2358.82</span>
+</div>
+</div>
+<!-- Sticky Checkout CTA -->
+<div class="pt-2">
+<button class="w-full h-12 bg-primary text-white hover:bg-teal-800 font-label-lg font-bold rounded-2xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-95" onclick="simulatePaymentProcess()">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span class="">Proceed to Payment • <span class="" id="btn-pay-amount">₹2358.82</span></span>
+</button>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- STAGE 4: COUPON & VOUCHER SYSTEM               -->
+<!-- ============================================== -->
+<section class="stage-view hidden flex-col space-y-4" id="stage-4">
+<div class="flex items-center justify-between">
+<button class="flex items-center gap-1 text-label-lg font-label-lg font-bold text-teal-900 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-xl border border-white/80 shadow-xs hover:bg-white" onclick="switchStage(3)">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span> Back to Checkout
+          </button>
+<span class="text-label-sm font-label-sm text-teal-900/70 font-semibold">Verified Coupon Engine</span>
+</div>
+<div class="p-4 bg-white/95 backdrop-blur-md rounded-2xl border border-white/80 shadow-xs">
+<h3 class="text-headline-sm font-headline-sm font-bold text-slate-900">Apply Discount Coupon</h3>
+<p class="text-label-sm font-body-sm text-slate-600 mt-0.5">Enter code or choose from verified student vouchers below.</p>
+<!-- Input Row -->
+<div class="mt-3 flex gap-2">
+<div class="relative flex-1">
+<input class="w-full h-11 px-3.5 bg-white border border-teal-200 rounded-xl font-label-lg font-bold text-slate-900 uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-600" id="couponInput" placeholder="Enter code (e.g. CRACK2025)" type="text"/>
+</div>
+<button class="px-5 h-11 bg-primary text-white font-label-lg font-bold rounded-xl hover:bg-teal-800 transition-all active:scale-95 shadow-xs" onclick="applyCoupon()">
+              Apply
+            </button>
+</div>
+<!-- Coupon Feedback Message Container -->
+<div class="mt-2.5 hidden p-3 rounded-xl text-label-md font-label-md font-bold flex items-center gap-2" id="coupon-feedback">
+<span class="material-symbols-outlined text-body-md" id="coupon-feedback-icon">check_circle</span>
+<span class="" id="coupon-feedback-text">Coupon applied successfully!</span>
+</div>
+</div>
+<!-- Available Student Coupons List -->
+<div class="space-y-3">
+<h4 class="text-body-md font-headline-sm font-bold text-slate-900 px-1">Available Offers</h4>
+<!-- Voucher 1 -->
+<div class="p-4 bg-white/95 backdrop-blur-md border-2 border-dashed border-teal-500 rounded-2xl relative overflow-hidden flex flex-col justify-between shadow-xs">
+<div class="flex justify-between items-start">
+<div>
+<span class="px-2.5 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider">40% OFF</span>
+<h5 class="text-body-md font-headline-sm font-bold text-slate-900 mt-1">CRACK2025</h5>
+<p class="text-label-sm font-body-sm text-slate-600 mt-0.5 font-medium">Special 40% discount on all comprehensive placement packs.</p>
+</div>
+<button class="px-4 py-2 bg-teal-100 text-primary hover:bg-teal-200 font-label-md rounded-xl font-bold transition-all active:scale-95 shadow-xs" onclick="selectVoucher('CRACK2025')">
+                Apply Code
+              </button>
+</div>
+<div class="mt-3 pt-2 border-t border-teal-100 flex justify-between text-label-sm font-label-sm text-slate-500 font-medium">
+<span class="">Valid till Dec 31, 2025</span>
+<span class="">Min. Order ₹1,499</span>
+</div>
+</div>
+<!-- Voucher 2 -->
+<div class="p-4 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl relative overflow-hidden flex flex-col justify-between shadow-xs">
+<div class="flex justify-between items-start">
+<div>
+<span class="px-2.5 py-0.5 rounded bg-teal-50 text-teal-800 border border-teal-200 text-[11px] font-bold uppercase tracking-wider">FLAT ₹300 OFF</span>
+<h5 class="text-body-md font-headline-sm font-bold text-slate-900 mt-1">ALEX99</h5>
+<p class="text-label-sm font-body-sm text-slate-600 mt-0.5 font-medium">Student referral credit applied directly to checkout.</p>
+</div>
+<button class="px-4 py-2 bg-white border border-teal-200 text-primary font-label-md rounded-xl font-bold hover:bg-teal-50 transition-all active:scale-95 shadow-xs" onclick="selectVoucher('ALEX99')">
+                Apply Code
+              </button>
+</div>
+<div class="mt-3 pt-2 border-t border-teal-100 flex justify-between text-label-sm font-label-sm text-slate-500 font-medium">
+<span class="">Personal Student Pass</span>
+<span class="">No Min Cart</span>
+</div>
+</div>
+</div>
+<button class="w-full h-11 bg-white/90 backdrop-blur-md border border-white/80 text-primary font-label-lg font-bold rounded-2xl flex items-center justify-center gap-1 hover:bg-white shadow-xs transition-all" onclick="switchStage(3)">
+<span class="">Return to Order Review</span>
+<span class="material-symbols-outlined text-body-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</section>
+<!-- ============================================== -->
+<!-- STAGE 5: PAYMENT PROCESSING & SUCCESS STATUS   -->
+<!-- ============================================== -->
+<section class="stage-view hidden flex-col space-y-4" id="stage-5">
+<!-- Processing State (Initially Hidden or dynamically shown) -->
+<div class="p-6 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl text-center space-y-4 shadow-sm" id="payment-processing-card">
+<div class="w-16 h-16 mx-auto rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center text-primary relative">
+<span class="material-symbols-outlined text-headline-lg animate-spin text-primary" data-icon="sync">sync</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm font-bold text-slate-900">Verifying Payment Gateway</h3>
+<p class="text-label-sm font-body-sm text-slate-600 mt-1">Connecting with NPCI &amp; Banking Node... Please do not press back or refresh.</p>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full w-2/3 animate-pulse"></div>
+</div>
+</div>
+<!-- Success State (Default active for status view) -->
+<div class="p-6 bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl text-center space-y-4 shadow-md" id="payment-success-card">
+<div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-headline-lg font-bold" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider border border-emerald-200">Transaction Verified</span>
+<h3 class="text-headline-md font-headline-md font-extrabold text-teal-900 mt-2">Enrollment Complete!</h3>
+<p class="text-label-sm font-body-sm text-slate-600 mt-1">Welcome aboard, Alex! Your course has been activated with full semester access.</p>
+</div>
+<!-- Transaction Summary Ticket -->
+<div class="p-4 bg-teal-50/70 rounded-xl border border-teal-100 text-left space-y-2 text-label-md font-body-sm">
+<div class="flex justify-between">
+<span class="text-slate-600 font-medium">Course Enrolled</span>
+<span class="font-bold text-slate-900" id="status-course-name">Speed Maths &amp; Data Interpretation Sprint</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-600 font-medium">Reference ID</span>
+<span class="font-mono text-slate-900 font-semibold">TXN_EDU_9824901</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-600 font-medium">Amount Paid</span>
+<span class="font-bold text-teal-900" id="status-paid-amount">₹2358.82</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-600 font-medium">Batch Validity</span>
+<span class="text-slate-900 font-semibold">365 Days Access (Dec 2025)</span>
+</div>
+</div>
+<!-- Primary Actions -->
+<div class="space-y-2.5 pt-2">
+<button class="w-full h-12 bg-primary text-white hover:bg-teal-800 font-label-lg font-bold rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95" onclick="goToMyCoursesTab()">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span class="">Go to My Courses • Start Lesson 1</span>
+</button>
+<button class="w-full h-11 bg-white/90 backdrop-blur-md border border-white/80 text-teal-900 hover:bg-white font-label-md font-bold rounded-xl flex items-center justify-center gap-1 transition-all shadow-xs" onclick="switchStage(1)">
+<span class="material-symbols-outlined text-body-sm" data-icon="explore">explore</span>
+<span class="">Explore More Courses</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Filter Drawer Modal Backdrop & Sheet (Simulated filter drawer trigger) -->
+<div class="fixed inset-0 bg-slate-950/40 backdrop-blur-xs z-50 hidden flex-col justify-end" id="filterDrawer">
+<div class="bg-white/95 backdrop-blur-md rounded-t-3xl p-5 border-t border-white/80 max-w-lg mx-auto w-full shadow-2xl space-y-4">
+<div class="flex justify-between items-center pb-2 border-b border-teal-100">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+<h3 class="text-body-lg font-headline-sm font-bold text-slate-900">Filter Courses</h3>
+</div>
+<button class="p-1 rounded-full text-slate-400 hover:text-slate-700" onclick="toggleFilterDrawer()">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="space-y-3.5 text-body-sm font-body-sm">
+<div>
+<label class="text-label-md font-label-md font-bold text-slate-900">Exam Category</label>
+<div class="grid grid-cols-2 gap-2 mt-1.5">
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-teal-100 bg-white text-label-md font-medium text-slate-800">
+<input checked="" class="rounded text-teal-600 focus:ring-teal-500" type="checkbox"/> TCS / Placement
+              </label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-teal-100 bg-white text-label-md font-medium text-slate-800">
+<input checked="" class="rounded text-teal-600 focus:ring-teal-500" type="checkbox"/> Banking PO / Clerk
+              </label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-teal-100 bg-white text-label-md font-medium text-slate-800">
+<input class="rounded text-teal-600 focus:ring-teal-500" type="checkbox"/> GATE 2026
+              </label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-teal-100 bg-white text-label-md font-medium text-slate-800">
+<input class="rounded text-teal-600 focus:ring-teal-500" type="checkbox"/> UPSC CSAT
+              </label>
+</div>
+</div>
+<div>
+<label class="text-label-md font-label-md font-bold text-slate-900">Validity Period</label>
+<div class="flex gap-2 mt-1.5">
+<button class="flex-1 py-2 text-label-md font-bold rounded-xl bg-primary text-white">All</button>
+<button class="flex-1 py-2 text-label-md font-medium rounded-xl border border-teal-200 bg-white text-slate-700">6 Months</button>
+<button class="flex-1 py-2 text-label-md font-medium rounded-xl border border-teal-200 bg-white text-slate-700">1 Year</button>
+</div>
+</div>
+</div>
+<div class="flex gap-3 pt-2">
+<button class="flex-1 h-11 border border-teal-200 rounded-xl font-label-md font-bold text-slate-700 hover:bg-slate-50" onclick="toggleFilterDrawer()">Reset</button>
+<button class="flex-1 h-11 bg-primary text-white font-label-md font-bold rounded-xl hover:bg-teal-800 shadow-sm" onclick="toggleFilterDrawer()">Apply Filters</button>
+</div>
+</div>
+</div>
+<!-- BottomNavBar (Frosted Glass, 5 Destinations, 'Courses' highlighted) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2.5 bg-white/90 backdrop-blur-md border-t border-white/60 shadow-lg">
+<div class="max-w-lg mx-auto w-full flex justify-around items-center">
+<!-- Home -->
+<button class="flex flex-col items-center justify-center text-slate-600 px-3 py-1 hover:text-primary transition-all active:scale-95" onclick="handleNavClick('Home')" type="button">
+<span class="material-symbols-outlined text-body-md" data-icon="school">school</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-medium">Home</span>
+</button>
+<!-- Courses (Active Navigation Destination) -->
+<button class="flex flex-col items-center justify-center bg-teal-100/80 text-primary border border-teal-200/80 rounded-2xl px-4 py-1.5 font-bold active:scale-95 transition-all shadow-xs" onclick="switchStage(1)" type="button">
+<span class="material-symbols-outlined text-body-md" data-icon="menu_book">menu_book</span>
+<span class="text-label-sm font-label-sm mt-0.5">Courses</span>
+</button>
+<!-- My Courses -->
+<button class="flex flex-col items-center justify-center text-slate-600 px-3 py-1 hover:text-primary transition-all active:scale-95" onclick="goToMyCoursesTab()" type="button">
+<span class="material-symbols-outlined text-body-md" data-icon="play_circle">play_circle</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-medium">My Courses</span>
+</button>
+<!-- Referral -->
+<button class="flex flex-col items-center justify-center text-slate-600 px-3 py-1 hover:text-primary transition-all active:scale-95" onclick="handleNavClick('Referral')" type="button">
+<span class="material-symbols-outlined text-body-md" data-icon="card_giftcard">card_giftcard</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-medium">Referral</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-slate-600 px-3 py-1 hover:text-primary transition-all active:scale-95" onclick="handleNavClick('Profile')" type="button">
+<span class="material-symbols-outlined text-body-md" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-medium">Profile</span>
+</button>
+</div>
+</nav>
+</div>
+<!-- Interactive JavaScript Flow Logic -->
+<script>
+    // State model
+    const state = {
+      currentStage: 1,
+      selectedCourse: {
+        title: "Speed Maths & Data Interpretation Sprint",
+        basePrice: 1999,
+        originalPrice: 3999,
+        category: "Banking Pre-Aptitude",
+        lessons: 48,
+        notes: 24
+      },
+      appliedCoupon: null,
+      couponDiscountPercent: 0,
+      flatDiscount: 0
+    };
+
+    // Stage Switcher Function
+    function switchStage(stageNum) {
+      state.currentStage = stageNum;
+
+      // Update pills appearance
+      for (let i = 1; i <= 5; i++) {
+        const btn = document.getElementById(`stage-btn-${i}`);
+        if (btn) {
+          if (i === stageNum) {
+            btn.className = "stage-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md whitespace-nowrap bg-primary text-white font-semibold shadow-sm transition-all active:scale-95";
+          } else {
+            btn.className = "stage-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md whitespace-nowrap bg-white/90 text-on-surface-variant border border-teal-100/80 hover:bg-teal-50/60 transition-all active:scale-95";
+          }
+        }
+      }
+
+      // Hide all stages, show targeted stage
+      document.querySelectorAll('.stage-view').forEach(view => {
+        view.classList.add('hidden');
+        view.classList.remove('flex');
+      });
+
+      const activeView = document.getElementById(`stage-${stageNum}`);
+      if (activeView) {
+        activeView.classList.remove('hidden');
+        activeView.classList.add('flex');
+      }
+
+      // Scroll smoothly to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Go to Details handler from Catalog
+    function goToDetails(title, price, category, lessons, notes) {
+      state.selectedCourse = {
+        title: title,
+        basePrice: price,
+        originalPrice: price * 2 - 1,
+        category: category,
+        lessons: lessons,
+        notes: notes
+      };
+
+      // Populate Details elements
+      document.getElementById('detail-title').innerText = title;
+      document.getElementById('detail-category-badge').innerText = category;
+      document.getElementById('detail-lessons-count').innerText = lessons;
+      document.getElementById('detail-notes-count').innerText = notes;
+      document.getElementById('detail-purchase-price').innerText = `₹${price.toLocaleString()}`;
+      document.getElementById('detail-original-price').innerText = `₹${(price * 2 - 1).toLocaleString()}`;
+
+      switchStage(2);
+    }
+
+    // Go to Checkout handler
+    function goToCheckout() {
+      // Synchronize Checkout elements with selectedCourse
+      document.getElementById('checkout-course-title').innerText = state.selectedCourse.title;
+      document.getElementById('checkout-item-base-price').innerText = `₹${state.selectedCourse.basePrice.toLocaleString()}`;
+      document.getElementById('summary-original-price').innerText = `₹${state.selectedCourse.originalPrice.toFixed(2)}`;
+      
+      const stdDiscount = state.selectedCourse.originalPrice - state.selectedCourse.basePrice;
+      document.getElementById('summary-standard-discount').innerText = `- ₹${stdDiscount.toFixed(2)}`;
+
+      recalculateTotals();
+      switchStage(3);
+    }
+
+    // Calculate checkout totals with coupons and GST
+    function recalculateTotals() {
+      let currentPrice = state.selectedCourse.basePrice;
+      let couponDiscountAmount = 0;
+
+      if (state.couponDiscountPercent > 0) {
+        couponDiscountAmount = currentPrice * (state.couponDiscountPercent / 100);
+      } else if (state.flatDiscount > 0) {
+        couponDiscountAmount = Math.min(state.flatDiscount, currentPrice);
+      }
+
+      const postDiscountBase = Math.max(0, currentPrice - couponDiscountAmount);
+      const gstAmount = postDiscountBase * 0.18;
+      const finalPayable = postDiscountBase + gstAmount;
+
+      // Update coupon row
+      const couponRow = document.getElementById('coupon-row');
+      if (state.appliedCoupon) {
+        couponRow.style.display = 'flex';
+        document.getElementById('applied-coupon-name').innerText = `Coupon (${state.appliedCoupon})`;
+        document.getElementById('summary-coupon-discount').innerText = `- ₹${couponDiscountAmount.toFixed(2)}`;
+        document.getElementById('checkout-coupon-status').innerText = `Applied: ${state.appliedCoupon} (₹${couponDiscountAmount.toFixed(0)} saved)`;
+      } else {
+        couponRow.style.display = 'none';
+        document.getElementById('checkout-coupon-status').innerText = "Use 'CRACK2025' for 40% Off";
+      }
+
+      document.getElementById('summary-tax-price').innerText = `₹${gstAmount.toFixed(2)}`;
+      document.getElementById('summary-final-total').innerText = `₹${finalPayable.toFixed(2)}`;
+      document.getElementById('btn-pay-amount').innerText = `₹${finalPayable.toFixed(2)}`;
+
+      // Update status screen amount
+      document.getElementById('status-course-name').innerText = state.selectedCourse.title;
+      document.getElementById('status-paid-amount').innerText = `₹${finalPayable.toFixed(2)}`;
+    }
+
+    // Apply Coupon Logic
+    function applyCoupon() {
+      const code = document.getElementById('couponInput').value.trim().toUpperCase();
+      const feedback = document.getElementById('coupon-feedback');
+      const text = document.getElementById('coupon-feedback-text');
+      const icon = document.getElementById('coupon-feedback-icon');
+
+      feedback.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-rose-100', 'text-rose-900');
+
+      if (code === 'CRACK2025') {
+        state.appliedCoupon = 'CRACK2025';
+        state.couponDiscountPercent = 40;
+        state.flatDiscount = 0;
+
+        feedback.classList.add('bg-emerald-100', 'text-emerald-900', 'border', 'border-emerald-200');
+        text.innerText = "Awesome! 40% Discount Applied to your Order.";
+        icon.innerText = "verified";
+
+        recalculateTotals();
+        setTimeout(() => switchStage(3), 1200);
+      } else if (code === 'ALEX99') {
+        state.appliedCoupon = 'ALEX99';
+        state.couponDiscountPercent = 0;
+        state.flatDiscount = 300;
+
+        feedback.classList.add('bg-emerald-100', 'text-emerald-900', 'border', 'border-emerald-200');
+        text.innerText = "Flat ₹300 Student Referral Credit Applied!";
+        icon.innerText = "verified";
+
+        recalculateTotals();
+        setTimeout(() => switchStage(3), 1200);
+      } else {
+        state.appliedCoupon = null;
+        state.couponDiscountPercent = 0;
+        state.flatDiscount = 0;
+
+        feedback.classList.add('bg-rose-100', 'text-rose-900', 'border', 'border-rose-200');
+        text.innerText = "Invalid coupon code. Try 'CRACK2025' or 'ALEX99'";
+        icon.innerText = "error";
+        recalculateTotals();
+      }
+    }
+
+    function selectVoucher(code) {
+      document.getElementById('couponInput').value = code;
+      applyCoupon();
+    }
+
+    // Payment Process Simulation
+    function simulatePaymentProcess() {
+      switchStage(5);
+      const processing = document.getElementById('payment-processing-card');
+      const success = document.getElementById('payment-success-card');
+
+      processing.classList.remove('hidden');
+      success.classList.add('hidden');
+
+      setTimeout(() => {
+        processing.classList.add('hidden');
+        success.classList.remove('hidden');
+      }, 1400);
+    }
+
+    // Toggle Syllabus Accordion
+    function toggleAccordion(contentId, iconId) {
+      const content = document.getElementById(contentId);
+      const icon = document.getElementById(iconId);
+
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    // Filter Chips
+    function setExamFilter(button, filter) {
+      document.querySelectorAll('.category-chip').forEach(btn => {
+        btn.className = "category-chip px-4 py-2 rounded-full text-label-md font-label-md border border-white/80 bg-white/90 backdrop-blur-md text-on-surface-variant hover:bg-white shadow-xs transition-all shrink-0";
+      });
+      button.className = "category-chip px-4 py-2 rounded-full text-label-md font-label-md border transition-all shrink-0 bg-primary text-white font-semibold border-primary shadow-xs";
+      
+      const countLabel = document.getElementById('course-count-label');
+      if (filter === 'all') countLabel.innerText = "14 Courses Available";
+      else if (filter === 'tcs') countLabel.innerText = "4 TCS Courses Available";
+      else if (filter === 'banking') countLabel.innerText = "3 Banking PO Batches Available";
+      else if (filter === 'gate') countLabel.innerText = "5 GATE Subjects Available";
+      else countLabel.innerText = "2 Campus Drives Available";
+    }
+
+    function toggleFilterDrawer() {
+      const drawer = document.getElementById('filterDrawer');
+      drawer.classList.toggle('hidden');
+      drawer.classList.toggle('flex');
+    }
+
+    function handleSearch(val) {
+      const countLabel = document.getElementById('course-count-label');
+      if (val.trim().length > 0) {
+        countLabel.innerText = `Showing results for "${val}"`;
+      } else {
+        countLabel.innerText = "14 Courses Available";
+      }
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('courseSearch');
+      input.value = '';
+      handleSearch('');
+    }
+
+    function goToMyCoursesTab() {
+      switchStage(1);
+      alert("Navigating to Alex's enrolled active lectures in 'TCS National Aptitude Masterclass'");
+    }
+
+    function handleNavClick(name) {
+      if (name === 'Courses') {
+        switchStage(1);
+      } else {
+        alert(`Navigating to ${name} tab`);
+      }
+    }
+
+    // Default initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      recalculateTotals();
+    });
+  </script>
+</body></html>

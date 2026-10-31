@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Courses &amp; Workspace</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#006f64",
+            "on-background": "#0d1c2f",
+            "on-secondary-fixed-variant": "#005048",
+            "outline": "#6e7977",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#00201c",
+            "background": "#f8f9ff",
+            "on-surface": "#0d1c2f",
+            "primary-fixed": "#9cf2e8",
+            "secondary": "#006b5f",
+            "on-primary-container": "#a3faef",
+            "primary": "#005c55",
+            "surface-container-low": "#eff4ff",
+            "on-tertiary-fixed-variant": "#3d4947",
+            "surface-dim": "#ccdbf4",
+            "tertiary-fixed-dim": "#bcc9c7",
+            "secondary-fixed-dim": "#4fdbc8",
+            "tertiary-container": "#5f6c6a",
+            "inverse-on-surface": "#ebf1ff",
+            "on-primary-fixed-variant": "#00504a",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#233144",
+            "primary-fixed-dim": "#80d5cb",
+            "inverse-primary": "#80d5cb",
+            "surface-container-highest": "#d5e3fd",
+            "on-surface-variant": "#3e4947",
+            "surface-tint": "#006a63",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed": "#d7e5e2",
+            "outline-variant": "#bdc9c6",
+            "error": "#ba1a1a",
+            "tertiary": "#475452",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#71f8e4",
+            "on-tertiary-fixed": "#121e1c",
+            "surface": "#f8f9ff",
+            "surface-container": "#e6eeff",
+            "on-tertiary-container": "#dfedea",
+            "secondary-container": "#6df5e1",
+            "on-primary-fixed": "#00201d",
+            "primary-container": "#0f766e",
+            "surface-variant": "#d5e3fd",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "surface-container-high": "#dde9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "margin-lg": "1.5rem",
+            "space-lg": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "2.5rem",
+            "gutter-sm": "0.75rem",
+            "space-xl": "1.75rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-gradient-bg {
+      background: linear-gradient(135deg, #a7f3d0 0%, #99f6e4 25%, #bae6fd 60%, #e0e7ff 100%);
+      background-attachment: fixed;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="custom-gradient-bg text-on-surface antialiased font-body-md min-h-screen pb-28">
+<!-- TOP APP BAR -->
+<header class="bg-white/80 backdrop-blur-md border-b border-white/50 sticky top-0 z-40 transition-all">
+<div class="flex justify-between items-center w-full px-5 py-3 max-w-2xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-headline-sm text-headline-sm overflow-hidden border border-white/60 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A portrait photograph of a focused young student with glasses studying in a calm, modern, sunlit library with teal accents and warm ambient tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApQD0GQqVEv1H4BiB-fKBi5cwC37Wgc4KhxDTVd63X7l8b0zpSNaeXsTp1c7nmykNIafdqwVTfMGDaLXgnwJxyuaEAKPQGw3yKEQ-7373Xii-bfzYR9DMTrD9_UkSlg9AzgmwixJ9-xj8WZNGX1y5CPf-eXZGH8D-FL1cU8-xK4ml0EwpEHQUChvWvJfKhU3tBonbs0JArzXk0i51oU5LGHTZ2UPI07AG2NumgVBDz"/>
+</div>
+<div>
+<span class="text-label-md font-label-md text-on-surface-variant block leading-tight">Welcome back</span>
+<span class="text-headline-sm font-headline-sm font-bold text-primary block leading-tight">Hello, Alex</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/60 hover:bg-white transition-all duration-150 active:scale-95 text-on-surface-variant shadow-sm border border-white/50">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS WRAPPER -->
+<main class="max-w-2xl mx-auto px-5 pt-4 space-y-6">
+<!-- HUB HEADER & SEARCH -->
+<section class="space-y-4 animate-fadeInUp">
+<div class="flex items-end justify-between">
+<div>
+<div class="flex items-center gap-2">
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">My Courses</h1>
+<span class="bg-primary text-on-primary text-label-sm font-label-sm px-2.5 py-0.5 rounded-full shadow-sm">3 Active</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Continue learning and track your progress</p>
+</div>
+<div class="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-white/92 backdrop-blur-md rounded-full border border-white/60 shadow-sm text-label-md font-label-md text-primary">
+<span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span>12-Day Streak</span>
+</div>
+</div>
+<!-- Search Field -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">search</span>
+<input class="w-full h-12 pl-11 pr-10 bg-white/92 backdrop-blur-md border border-white/60 rounded-xl text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 shadow-sm transition-all placeholder:text-outline" placeholder="Search lessons, syllabus or notes..." type="text" value="Aptitude &amp; Speed Maths"/>
+<button aria-label="Clear search" class="absolute right-3 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar text-label-md font-label-md">
+<button class="px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-md transition-all shadow-sm flex items-center gap-1.5 whitespace-nowrap active:scale-95">
+<span>All Courses</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+</button>
+<button class="px-4 py-2 rounded-full bg-white/92 backdrop-blur-md border border-white/60 text-on-surface-variant hover:text-primary transition-all whitespace-nowrap shadow-sm active:scale-95">
+          In Progress (2)
+        </button>
+<button class="px-4 py-2 rounded-full bg-white/92 backdrop-blur-md border border-white/60 text-on-surface-variant hover:text-primary transition-all whitespace-nowrap shadow-sm active:scale-95">
+          Completed (0)
+        </button>
+<button class="px-4 py-2 rounded-full bg-white/92 backdrop-blur-md border border-white/60 text-on-surface-variant hover:text-primary transition-all whitespace-nowrap shadow-sm active:scale-95">
+          Expired (1)
+        </button>
+</div>
+</section>
+<!-- SECTION 1: ENROLLED COURSES CARDS (BENTO LIST) -->
+<section class="space-y-4 animate-fadeInUp">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Enrolled Programs</h2>
+<span class="text-label-md font-label-md text-primary font-semibold">Sorted by Recent</span>
+</div>
+<!-- Card 1: Active In Progress (Primary Target) -->
+<article class="bg-white/92 backdrop-blur-md rounded-2xl border border-white/60 shadow-sm p-4 sm:p-5 transition-all relative overflow-hidden hover:shadow-md">
+<div class="absolute top-0 right-0 bg-primary/10 text-primary px-3 py-1 rounded-bl-xl text-label-sm font-label-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Active Session
+        </div>
+<div class="flex gap-4">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden flex-shrink-0 relative border border-white/60 shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A modern isometric clean vector and photographic illustration showing data structures, mathematics formulas, and digital corporate hiring examination tokens in deep teal and warm white colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-FSUMMQf8UsLCFSqvxCGgDR5n7qDWZEkaJ1xHiXgOtw_N3ED1o3UCfoG0nEOKoRJUy73TUQKEUiIVYIcaXAfn233RmKm14tQYLRhaaot9dGz7p4ky-wDDHCCHqqVewY1de00goI3ZSRp0TUVTjtaRsJSR3BaJqISr5qkt6Um6cK7X1KcokG4q4obpHDkYp7N1exlBeDcK9_KD03fZungkTQ6XeE9VfJmRXVhlZr1i"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+<div class="w-8 h-8 rounded-full bg-white/90 text-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex-1 min-w-0 pr-12">
+<span class="inline-block text-label-sm font-label-sm text-secondary bg-surface-container-high/60 px-2 py-0.5 rounded-md mb-1">TCS NQT 2025</span>
+<h3 class="text-body-md font-body-md font-bold text-on-surface truncate">TCS National Aptitude &amp; Placement Masterclass</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+              Valid till 15 Nov 2025 <span class="text-secondary font-semibold">(184 days left)</span>
+</p>
+</div>
+</div>
+<!-- Progress Tracker -->
+<div class="mt-4 pt-3 border-t border-outline-variant/30 space-y-1.5">
+<div class="flex justify-between items-center text-label-md font-label-md">
+<span class="text-on-surface-variant">Progress (44 of 64 lessons)</span>
+<span class="text-primary font-bold">68%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high/80 overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-primary to-secondary transition-all" style="width: 68%;"></div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between gap-3">
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span> Accredited Prep
+          </span>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-xl font-label-lg text-label-lg shadow-sm hover:bg-secondary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span>Continue Learning</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Expiring Soon -->
+<article class="bg-white/92 backdrop-blur-md rounded-2xl border border-white/60 shadow-sm p-4 sm:p-5 relative overflow-hidden transition-all hover:shadow-md">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 relative border border-white/60 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="An educational preview card visual with computer science circuit lines, binary code, and engineering symbols bathed in a warm white studio lighting with teal tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH_EPlhuDf-6ugmO_ogrJJWuZRPvJXFtHLb3t0xc788m_Sq6fWVDwnrr-vPgNk_hRZQboBdYeVnY8b-41pwjI-WwZgW1woGBcXjcNtMA600_RSOsqRQn4BOFRS_H6dll-xWXfBXR71jrICLbVCDNpDZPtr50E_Sp6cbNatzWaMYtz2mdk63--Gy9kLwE6vX1YexdgnnjrwD_Wt8rpd-HAjZQpAUM8GgoWc9DQbyYmP"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-label-sm font-label-sm text-tertiary bg-surface-container-high/60 px-2 py-0.5 rounded-md">GATE 2025</span>
+<span class="bg-amber-100 text-amber-800 text-label-sm font-label-sm px-2 py-0.5 rounded-md font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> Expires in 5 days
+              </span>
+</div>
+<h3 class="text-body-md font-body-md font-bold text-on-surface truncate">GATE CS &amp; IT Foundation 2025</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">18 of 82 lessons completed (22%)</p>
+</div>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high/80 mt-3 overflow-hidden">
+<div class="h-full rounded-full bg-amber-500" style="width: 22%;"></div>
+</div>
+<div class="mt-4 flex items-center justify-end gap-2.5">
+<button class="px-3.5 py-2 rounded-xl text-primary font-label-md text-label-md border border-outline-variant/60 bg-white/70 hover:bg-white active:scale-95 transition-all">
+            Renew Course
+          </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container-high/80 text-primary font-label-md text-label-md hover:bg-secondary-container active:scale-95 transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+            Resume
+          </button>
+</div>
+</article>
+<!-- Card 3: Expired -->
+<article class="bg-white/92 backdrop-blur-md rounded-2xl border border-white/60 p-4 sm:p-5 relative shadow-sm opacity-90 transition-all hover:shadow-md">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 relative border border-white/60 grayscale">
+<img class="w-full h-full object-cover" data-alt="A clean textbook themed graphic displaying mathematical curves, calculators, and banking financial indices in soft muted slate and cool tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPKKdzvpNzE0izM4hb426kJSxC0B46e2gOlAB-Mty2yg7N5kH8i7Hg8nhyvtInoVE_eBUh4I7Zzj67G5OGg-Ps-RagPnZYSxj8DLWw9O7zTqOgOmn_2WIsIZVyZ-89hPv26zITsOWnuCBLTVp6xicAQAjMm8aP-ocGUxP1BNUHID_Qe7yNTN4wd_smp-3eMk3Xf5x1Je5Fsf8areFRYw4t_tj5M_L1unpcsDmyz72o"/>
+<div class="absolute inset-0 bg-inverse-surface/40 flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-label-sm font-label-sm text-outline bg-surface-container px-2 py-0.5 rounded-md">Banking PO</span>
+<span class="bg-error-container text-error text-label-sm font-label-sm px-2 py-0.5 rounded-md font-semibold">Expired</span>
+</div>
+<h3 class="text-body-md font-body-md font-bold text-on-surface/80 truncate">IBPS &amp; SBI PO Speed Maths</h3>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Completed 48/48 lessons (100%)</p>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock_reset</span>
+            Content locked • Alumni discount 40%
+          </div>
+<button class="px-3.5 py-1.5 rounded-xl bg-primary text-on-primary text-label-md font-label-md hover:bg-secondary active:scale-95 transition-all shadow-sm">
+            Repurchase
+          </button>
+</div>
+</article>
+</section>
+<!-- SECTION 2: INTERACTIVE LEARNING WORKSPACE SHOWCASE -->
+<section class="mt-8 pt-6 border-t-2 border-white/40 space-y-6 animate-fadeInUp">
+<!-- Workspace Heading & Sub-Tabs -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">laptop_chromebook</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Active Workspace</h2>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Selected: TCS National Aptitude Masterclass</p>
+</div>
+<button class="text-label-md font-label-md text-primary font-semibold hover:underline flex items-center gap-1">
+            Change Unit <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- Course Navigation Sub-Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar border-b border-white/60">
+<button class="px-3.5 py-2 text-label-md font-label-md text-primary border-b-2 border-primary font-bold flex items-center gap-1.5 whitespace-nowrap active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">videocam</span> Videos
+          </button>
+<button class="px-3.5 py-2 text-label-md font-label-md text-on-surface-variant hover:text-primary font-medium flex items-center gap-1.5 whitespace-nowrap active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span> PDF Notes
+          </button>
+<button class="px-3.5 py-2 text-label-md font-label-md text-on-surface-variant hover:text-primary font-medium flex items-center gap-1.5 whitespace-nowrap active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">quiz</span> Practice Questions
+          </button>
+<button class="px-3.5 py-2 text-label-md font-label-md text-on-surface-variant hover:text-primary font-medium flex items-center gap-1.5 whitespace-nowrap active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span> Topic Tests
+          </button>
+<button class="px-3.5 py-2 text-label-md font-label-md text-on-surface-variant hover:text-primary font-medium flex items-center gap-1.5 whitespace-nowrap active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">timer</span> Mock Tests
+          </button>
+<button class="px-3.5 py-2 text-label-md font-label-md text-on-surface-variant hover:text-primary font-medium flex items-center gap-1.5 whitespace-nowrap active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">insights</span> Progress
+          </button>
+</div>
+</div>
+<!-- ITEM A: VIDEO PLAYER COMPONENT -->
+<div class="bg-white/92 backdrop-blur-md rounded-2xl border border-white/60 shadow-sm overflow-hidden transition-all hover:shadow-md">
+<!-- Video Screen Container -->
+<div class="relative w-full aspect-video bg-inverse-surface flex items-center justify-center overflow-hidden group">
+<img class="w-full h-full object-cover opacity-85" data-alt="A clean video player freeze-frame showing a mathematics instructor in a high-tech modern studio drawing clear whiteboard algebraic equations in teal and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2NtNodc2SPSRPNFXe_O9l7qRBBWkHaG2QFhdVfu23_EzyVj7b5DTklGD6enwEC5SyXPITx7b8lHptVNTJhFydnY2W7OzGHsmTfAovuWTipcNnJnt34PPfUDViYTzb0zWL7AwkpeYrKNdW-xHkDLRSwbdr-QXKaQNEc2uBdR2bXysnUMjHJIfce7v4M7LQkoNLuXvRCthK-l5DYleasOVYAGtw_OMWVzfkfhOhAsL_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40"></div>
+<!-- Top Badges Overlay -->
+<div class="absolute top-3 left-3 right-3 flex justify-between items-center text-white text-label-sm font-label-sm">
+<span class="bg-black/60 px-2.5 py-1 rounded-md backdrop-blur-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Lesson 45 of 64
+            </span>
+<div class="flex items-center gap-2">
+<span class="bg-black/60 px-2 py-0.5 rounded-md font-mono text-[10px]">1080p HD</span>
+<span class="bg-primary/80 px-2 py-0.5 rounded-md font-semibold">1.25x</span>
+</div>
+</div>
+<!-- Play Center Button -->
+<button aria-label="Play video" class="w-14 h-14 rounded-full bg-primary/90 text-on-primary flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- Bottom Playback Scrub Bar -->
+<div class="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-black/80 to-transparent space-y-1.5">
+<div class="w-full h-1 bg-white/30 rounded-full overflow-hidden cursor-pointer">
+<div class="h-full bg-secondary-fixed w-2/5"></div>
+</div>
+<div class="flex items-center justify-between text-white text-label-sm font-label-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] cursor-pointer hover:text-secondary-fixed transition-colors">pause</span>
+<span class="material-symbols-outlined text-[18px] cursor-pointer hover:text-secondary-fixed transition-colors">replay_10</span>
+<span class="material-symbols-outlined text-[18px] cursor-pointer hover:text-secondary-fixed transition-colors">forward_10</span>
+<span class="font-mono text-[11px]">14:20 / 38:45</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] cursor-pointer hover:text-secondary-fixed transition-colors">volume_up</span>
+<span class="material-symbols-outlined text-[18px] cursor-pointer hover:text-secondary-fixed transition-colors">fullscreen</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Lecture Meta & Action Controls -->
+<div class="p-4 sm:p-5 space-y-4">
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-bold tracking-wider uppercase">Quantitative Aptitude</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mt-0.5">Modular Arithmetic &amp; Permutations</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Focuses on remainder theorem, cyclicity, and real placement questions from 2023-2024.</p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant/60 bg-white/60 text-on-surface-variant text-label-md font-label-md hover:bg-white active:scale-95 transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">skip_previous</span> Previous
+              </button>
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant/60 bg-white/60 text-on-surface-variant text-label-md font-label-md hover:bg-white active:scale-95 transition-all flex items-center gap-1">
+                Next <span class="material-symbols-outlined text-[16px]">skip_next</span>
+</button>
+</div>
+<button class="px-4 py-2 rounded-xl bg-secondary-container text-on-secondary-container text-label-md font-label-md font-bold flex items-center gap-1.5 shadow-sm hover:bg-secondary-fixed active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Mark as Completed
+            </button>
+</div>
+</div>
+</div>
+<!-- ITEM B: PROTECTED PDF NOTES VIEWER -->
+<div class="bg-white/92 backdrop-blur-md rounded-2xl border border-white/60 p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all hover:shadow-md">
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0 border border-red-100 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">picture_as_pdf</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-bold text-on-surface">Formula Handbook &amp; Shortcuts PDF</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span>34 pages</span> • <span>4.2 MB</span> • 
+              <span class="text-secondary font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">lock</span> Watermarked
+              </span>
+</p>
+</div>
+</div>
+<button class="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-primary text-primary hover:bg-primary hover:text-on-primary text-label-md font-label-md font-bold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+          Open Protected Viewer
+        </button>
+</div>
+<!-- ITEM C: INTERACTIVE PRACTICE MCQ CARD -->
+<div class="bg-white/92 backdrop-blur-md rounded-2xl border border-white/60 p-4 sm:p-5 shadow-sm space-y-4 transition-all hover:shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-high/80 text-primary px-2.5 py-1 rounded-md text-label-sm font-label-sm font-bold">Question 14 of 25</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Number Systems &amp; Divisibility</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">history</span> 2 attempts
+          </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface font-medium leading-relaxed">
+          What is the remainder when \( 7^{84} \) is divided by \( 342 \)?
+        </p>
+<!-- Radio Options -->
+<div class="space-y-2.5">
+<label class="flex items-center justify-between p-3 rounded-xl border border-outline-variant/40 bg-white/50 hover:bg-white active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center"></span>
+<span class="text-body-sm font-body-sm text-on-surface">A) 1</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline">Selected 12%</span>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl border-2 border-primary bg-primary-fixed/30 active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center bg-primary">
+<span class="w-2 h-2 rounded-full bg-white"></span>
+</span>
+<span class="text-body-sm font-body-sm text-on-surface font-semibold">B) 49</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-bold">Your Choice</span>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl border border-outline-variant/40 bg-white/50 hover:bg-white active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center"></span>
+<span class="text-body-sm font-body-sm text-on-surface">C) 341</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline">Selected 8%</span>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl border border-outline-variant/40 bg-white/50 hover:bg-white active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center"></span>
+<span class="text-body-sm font-body-sm text-on-surface">D) 7</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline">Selected 5%</span>
+</label>
+</div>
+<!-- Explanation Accordion -->
+<div class="bg-surface-container-low/70 rounded-xl p-3.5 border border-outline-variant/40 space-y-1">
+<div class="flex items-center justify-between text-label-md font-label-md text-primary font-bold cursor-pointer">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+              Correct Answer: B (49) • Explanation
+            </span>
+<span class="material-symbols-outlined text-[18px]">expand_less</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant pt-1">
+            Note that \( 7^3 = 343 \equiv 1 \pmod{342} \). Therefore, \( 7^{84} = (7^3)^{28} \equiv 1^{28} \equiv 1 \). When factoring index adjustments, remainder equals 49.
+          </p>
+</div>
+</div>
+<!-- ITEM D: MOCK TEST SIMULATOR CARD -->
+<div class="bg-white/92 backdrop-blur-md rounded-2xl border border-white/60 p-4 sm:p-5 shadow-sm space-y-4 transition-all hover:shadow-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-primary bg-primary-fixed/50 px-2 py-0.5 rounded font-bold">Simulator Environment</span>
+<h4 class="text-headline-sm font-headline-sm text-on-surface mt-1">TCS NQT Full Mock Test 03</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Standard pattern: 60 questions • Negative marking (0.25)</p>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-outline block">Remaining Time</span>
+<span class="font-mono text-headline-sm font-headline-sm text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]">timer</span> 120:00
+            </span>
+</div>
+</div>
+<!-- Mini Question Palette Preview -->
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mb-2 font-medium">Question Palette Preview (Section A: Numerical Ability)</span>
+<div class="grid grid-cols-10 gap-1.5">
+<div class="h-6 rounded bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center cursor-pointer active:scale-95 transition-transform">1</div>
+<div class="h-6 rounded bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center cursor-pointer active:scale-95 transition-transform">2</div>
+<div class="h-6 rounded bg-amber-400 text-on-surface text-[10px] font-bold flex items-center justify-center cursor-pointer active:scale-95 transition-transform">3</div>
+<div class="h-6 rounded bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center cursor-pointer active:scale-95 transition-transform">4</div>
+<div class="h-6 rounded bg-surface-container-high text-on-surface text-[10px] font-medium flex items-center justify-center cursor-pointer active:scale-95 transition-transform">5</div>
+<div class="h-6 rounded bg-surface-container-high text-on-surface text-[10px] font-medium flex items-center justify-center cursor-pointer active:scale-95 transition-transform">6</div>
+<div class="h-6 rounded bg-surface-container-high text-on-surface text-[10px] font-medium flex items-center justify-center cursor-pointer active:scale-95 transition-transform">7</div>
+<div class="h-6 rounded bg-surface-container-high text-on-surface text-[10px] font-medium flex items-center justify-center cursor-pointer active:scale-95 transition-transform">8</div>
+<div class="h-6 rounded bg-surface-container-high text-on-surface text-[10px] font-medium flex items-center justify-center cursor-pointer active:scale-95 transition-transform">9</div>
+<div class="h-6 rounded bg-surface-container-high text-on-surface text-[10px] font-medium flex items-center justify-center cursor-pointer active:scale-95 transition-transform">10</div>
+</div>
+<div class="flex items-center gap-4 mt-2 text-label-sm font-label-sm text-outline">
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-primary"></span> Answered (3)</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-amber-400"></span> Review (1)</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-surface-container-high"></span> Unvisited</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant/30">
+<button class="px-3.5 py-2 rounded-xl text-on-surface-variant border border-outline-variant/60 bg-white/70 hover:bg-white text-label-md font-label-md active:scale-95 transition-all">
+            Mark for Review
+          </button>
+<button class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-secondary active:scale-95 transition-all flex items-center gap-1.5">
+<span>Launch Test</span>
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+</button>
+</div>
+</div>
+<!-- ITEM E: PROGRESS ANALYTICS SUMMARY -->
+<div class="bg-white/92 backdrop-blur-md rounded-2xl border border-white/60 p-4 sm:p-5 shadow-sm space-y-4 transition-all hover:shadow-md">
+<h4 class="text-headline-sm font-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">monitoring</span>
+          Course Performance Metrics
+        </h4>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<!-- Metric 1 -->
+<div class="p-3 bg-white/80 rounded-xl border border-white/60 shadow-sm">
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Videos Watched</span>
+<span class="text-headline-sm font-headline-sm font-bold text-primary mt-1 block">44 / 64</span>
+<span class="text-[11px] text-secondary font-semibold">68.7% completed</span>
+</div>
+<!-- Metric 2 -->
+<div class="p-3 bg-white/80 rounded-xl border border-white/60 shadow-sm">
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Practice Solved</span>
+<span class="text-headline-sm font-headline-sm font-bold text-primary mt-1 block">180 / 250</span>
+<span class="text-[11px] text-secondary font-semibold">72.0% accuracy</span>
+</div>
+<!-- Metric 3 -->
+<div class="p-3 bg-white/80 rounded-xl border border-white/60 shadow-sm col-span-2 sm:col-span-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Mock Test Avg</span>
+<span class="text-headline-sm font-headline-sm font-bold text-amber-600 mt-1 block">78.5%</span>
+<span class="text-[11px] text-outline font-semibold">Rank #42 / 850</span>
+</div>
+</div>
+<div class="p-3 bg-primary-fixed/20 rounded-xl flex items-center justify-between border border-primary-fixed/40">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-amber-600 text-[24px]" style="font-variation-settings: 'FILL' 1;">whatshot</span>
+<div>
+<span class="text-label-md font-label-md text-on-surface font-bold block">12-Day Study Streak Active</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Spend 20 mins today to retain your milestone badge!</span>
+</div>
+</div>
+<span class="text-label-md font-label-md text-primary font-bold hover:underline cursor-pointer">Details</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BOTTOM NAVIGATION BAR -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-white/85 backdrop-blur-md border-t border-white/60 shadow-lg">
+<!-- 1. Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">school</span>
+<span class="text-label-sm font-label-sm mt-0.5">Home</span>
+</a>
+<!-- 2. Courses -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+<span class="text-label-sm font-label-sm mt-0.5">Courses</span>
+</a>
+<!-- 3. My Courses (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-3 py-1.5 font-semibold active:scale-95 transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="text-label-sm font-label-sm mt-0.5">My Courses</span>
+</a>
+<!-- 4. Referral -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">card_giftcard</span>
+<span class="text-label-sm font-label-sm mt-0.5">Referral</span>
+</a>
+<!-- 5. Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">Profile</span>
+</a>
+</nav>
+</body></html>

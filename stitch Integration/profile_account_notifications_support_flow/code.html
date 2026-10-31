@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Profile - LearnTeal</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#dde9ff",
+            "error-container": "#ffdad6",
+            "secondary-container": "#6df5e1",
+            "tertiary": "#475452",
+            "on-primary-fixed": "#00201d",
+            "tertiary-fixed-dim": "#bcc9c7",
+            "surface-dim": "#ccdbf4",
+            "tertiary-container": "#5f6c6a",
+            "surface-container": "#e6eeff",
+            "primary-container": "#0f766e",
+            "on-background": "#0d1c2f",
+            "primary": "#005c55",
+            "inverse-primary": "#80d5cb",
+            "background": "#f8f9ff",
+            "on-tertiary-fixed-variant": "#3d4947",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#005048",
+            "on-tertiary-container": "#dfedea",
+            "tertiary-fixed": "#d7e5e2",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed": "#71f8e4",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#80d5cb",
+            "inverse-surface": "#233144",
+            "primary-fixed": "#9cf2e8",
+            "on-surface": "#0d1c2f",
+            "on-primary-fixed-variant": "#00504a",
+            "outline": "#6e7977",
+            "surface": "#f8f9ff",
+            "inverse-on-surface": "#ebf1ff",
+            "on-primary": "#ffffff",
+            "surface-tint": "#006a63",
+            "secondary": "#006b5f",
+            "on-primary-container": "#a3faef",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#00201c",
+            "outline-variant": "#bdc9c6",
+            "surface-bright": "#f8f9ff",
+            "surface-container-low": "#eff4ff",
+            "on-secondary-container": "#006f64",
+            "on-tertiary-fixed": "#121e1c",
+            "surface-container-highest": "#d5e3fd",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#3e4947",
+            "surface-variant": "#d5e3fd",
+            "secondary-fixed-dim": "#4fdbc8",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "1.5rem",
+            "space-2xl": "2.5rem",
+            "margin": "1.25rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "space-xl": "1.75rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Fixed gradient background from Screen 2 */
+    .screen2-gradient-bg {
+      background: linear-gradient(135deg, #a7f3d0 0%, #99f6e4 25%, #bae6fd 60%, #e0e7ff 100%);
+    }
+    /* Custom tab smooth transition */
+    .tab-item.active {
+      background-color: #0f766e;
+      color: #ffffff;
+      box-shadow: 0 4px 12px -2px rgba(15, 118, 110, 0.28);
+    }
+    /* Fade in up entrance animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .delay-1 { animation-delay: 0.05s; }
+    .delay-2 { animation-delay: 0.12s; }
+    .delay-3 { animation-delay: 0.18s; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="relative min-h-screen text-on-surface font-body-md antialiased pb-28 selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Screen 2 Fixed Gradient Canvas Background -->
+<div class="fixed inset-0 screen2-gradient-bg -z-10 pointer-events-none"></div>
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-white/60 shadow-sm">
+<div class="flex justify-between items-center w-full px-5 py-3 max-w-2xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full ring-2 ring-primary-container/20 overflow-hidden bg-white/80 shrink-0 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="A clean portrait photo of a focused young South Asian computer science student named Alex smiling warmly, illuminated by soft natural desk lamp lighting in a contemporary minimalist study environment with teal and white academic tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoeSTmV5tjL7aTdtbBxnoMatVYtgTThUD7Iodjy_bJCKD-FvcqNPIZMoHb6e68vdQegKWAXmIozyVh-FYobw6sTuZQ_NzjTyiaQuAQPnHuV5LRtqE_hPxulCPkXLMVlnBUR5fE2dQxqOqEYF0d8L_q_LeqIAV2T2aw1AMP5Khqo6DamUbyxsBWmeiF2ONMacSOjyUXymPM5XuMC6_cZaKvMzaYE83Oekjfu-bUWOOc"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-primary rounded-full ring-2 ring-white"></div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">Student Profile</h1>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-label-md font-label-md text-on-surface-variant">Account, preferences &amp; support</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="relative w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-white/70 hover:text-on-surface active:scale-95 transition-all duration-150">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-white animate-pulse"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Canvas Container (Max 680px for focused ergonomics) -->
+<main class="max-w-2xl mx-auto px-5 pt-4 space-y-5">
+<!-- Profile Header Card (Translucent Glassmorphism Surface) -->
+<section class="animate-fadeInUp bg-white/92 backdrop-blur-md rounded-[24px] p-5 sm:p-6 border border-white/60 shadow-sm relative overflow-hidden">
+<!-- Soft ambient backdrop flourish -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-secondary-container/30 blur-2xl pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 relative z-10">
+<!-- Avatar with Camera/Edit Badge -->
+<div class="relative group shrink-0">
+<div class="w-20 h-20 rounded-full ring-4 ring-secondary-container/70 shadow-md overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Close up avatar of college student Alex wearing a deep teal henley shirt against a calm minimalist modern studio backdrop with warm slate accents and natural rim illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK4dA7ivvUwt2CL1lxN1vwkgXEzRCJ13Kn88RUsNzo_i2pozHxzpudvWHwtZELTsuBBdFOxHmPGb-AL53JPkUdkCGMxYLc8vtgHnpGrRIkjCfIHG_kiFIaowIsksKnkEcYPQa3HyNheJGkBxASS1u1F5kTpoJPw1O-bPo2eW0ynb-skmRxApAaUmbiQswDSMqvHBq4aCMotOn28VLqkiJo6gf8TTHzomDRsXxz-1wT"/>
+</div>
+<button class="absolute bottom-0 right-0 w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform" title="Upload new photo">
+<span class="material-symbols-outlined text-[15px]">photo_camera</span>
+</button>
+</div>
+<!-- Student Basic Meta -->
+<div class="flex-1 text-center sm:text-left">
+<div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+<h2 class="text-headline-md font-headline-md font-bold text-on-surface">Alex Sharma</h2>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-secondary-container/50 text-on-secondary-container font-semibold border border-secondary-container/40">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">school</span>
+              Student ID Verified
+            </span>
+</div>
+<p class="text-body-sm font-body-sm text-primary font-medium mt-0.5">IIT Bombay / GATE CS &amp; TCS NQT 2025 Aspirant</p>
+<div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1 mt-2 text-label-md font-label-md text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">mail</span>
+              alex.sharma@gmail.com
+            </span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">call</span>
+              +91 98765 43210
+            </span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_month</span>
+              Joined August 2024
+            </span>
+</div>
+</div>
+<div class="self-center sm:self-start">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-label-md font-label-md font-semibold text-primary bg-secondary-container/30 hover:bg-secondary-container/50 border border-teal-200 shadow-xs active:scale-95 transition-all" onclick="switchTab('tab-details')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+            Edit
+          </button>
+</div>
+</div>
+<!-- Quick Metrics Grid -->
+<div class="grid grid-cols-3 gap-2.5 mt-5 pt-4 border-t border-teal-900/10 text-center">
+<div class="p-2.5 rounded-2xl bg-white/70 border border-white/80 shadow-xs hover:bg-white/90 transition-colors">
+<div class="flex items-center justify-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary">play_circle</span>
+            Enrolled
+          </div>
+<p class="text-body-lg font-body-lg font-bold text-on-surface mt-0.5">3 Courses</p>
+</div>
+<div class="p-2.5 rounded-2xl bg-white/70 border border-white/80 shadow-xs hover:bg-white/90 transition-colors">
+<div class="flex items-center justify-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary">payments</span>
+            Earnings
+          </div>
+<p class="text-body-lg font-body-lg font-bold text-primary mt-0.5">₹7,000</p>
+</div>
+<div class="p-2.5 rounded-2xl bg-white/70 border border-white/80 shadow-xs hover:bg-white/90 transition-colors">
+<div class="flex items-center justify-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary">group</span>
+            Invited
+          </div>
+<p class="text-body-lg font-body-lg font-bold text-on-surface mt-0.5">12 Friends</p>
+</div>
+</div>
+</section>
+<!-- Profile Navigation Segment / Tabs -->
+<nav class="animate-fadeInUp delay-1 bg-white/92 backdrop-blur-md p-1.5 rounded-2xl border border-white/60 shadow-sm flex items-center justify-between gap-1 overflow-x-auto no-scrollbar">
+<button class="tab-item active flex-1 min-w-[100px] py-2 px-2.5 rounded-xl text-label-md font-label-md text-center font-semibold active:scale-95 transition-all duration-150 flex items-center justify-center gap-1.5" id="btn-tab-details" onclick="switchTab('tab-details')">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>Details</span>
+</button>
+<button class="tab-item flex-1 min-w-[110px] py-2 px-2.5 rounded-xl text-label-md font-label-md text-center text-on-surface-variant hover:text-on-surface hover:bg-white/50 font-semibold active:scale-95 transition-all duration-150 flex items-center justify-center gap-1.5" id="btn-tab-notifications" onclick="switchTab('tab-notifications')">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+<span>Notifications</span>
+</button>
+<button class="tab-item flex-1 min-w-[110px] py-2 px-2.5 rounded-xl text-label-md font-label-md text-center text-on-surface-variant hover:text-on-surface hover:bg-white/50 font-semibold active:scale-95 transition-all duration-150 flex items-center justify-center gap-1.5" id="btn-tab-support" onclick="switchTab('tab-support')">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Help &amp; Tickets</span>
+</button>
+<button class="tab-item flex-1 min-w-[110px] py-2 px-2.5 rounded-xl text-label-md font-label-md text-center text-on-surface-variant hover:text-on-surface hover:bg-white/50 font-semibold active:scale-95 transition-all duration-150 flex items-center justify-center gap-1.5" id="btn-tab-security" onclick="switchTab('tab-security')">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span>Security</span>
+</button>
+</nav>
+<!-- TAB SECTION 1: Details & Edit Profile -->
+<section class="space-y-4 animate-fadeInUp delay-2" id="tab-details">
+<div class="bg-white/92 backdrop-blur-md rounded-[24px] p-5 sm:p-6 border border-white/60 shadow-sm space-y-5">
+<div class="flex items-center justify-between pb-3 border-b border-teal-900/10">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Personal &amp; Academic Details</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Update your registered contact and entrance exam track</p>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container-high/80 text-primary border border-teal-200">
+            Step 1 of 4
+          </span>
+</div>
+<form class="space-y-4" onsubmit="event.preventDefault(); showToast('Profile details updated successfully!');">
+<!-- Full Name -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-outline text-[19px]">person</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant/80 focus:border-primary focus:ring-2 focus:ring-secondary-container/60 text-body-md font-body-md text-on-surface bg-white/90 backdrop-blur-sm transition-all" type="text" value="Alex Sharma"/>
+</div>
+</div>
+<!-- Email Address (Verified) -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-on-surface">Email Address</label>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Verified
+              </span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-outline text-[19px]">mail</span>
+<input class="w-full pl-10 pr-12 py-3 rounded-xl border border-outline-variant/60 bg-surface-container-low/60 text-body-md font-body-md text-on-surface transition-all" type="email" value="alex.sharma@gmail.com"/>
+<span class="material-symbols-outlined absolute right-3.5 top-3.5 text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-1">Contact student desk to modify verified email address.</p>
+</div>
+<!-- Phone Number (Verified) -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-on-surface">Phone Number (WhatsApp Active)</label>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Verified
+              </span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-outline text-[19px]">call</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant/80 focus:border-primary focus:ring-2 focus:ring-secondary-container/60 text-body-md font-body-md text-on-surface bg-white/90 backdrop-blur-sm transition-all" type="tel" value="+91 98765 43210"/>
+</div>
+</div>
+<!-- College / Institution -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">College / Institution</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-outline text-[19px]">account_balance</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant/80 focus:border-primary focus:ring-2 focus:ring-secondary-container/60 text-body-md font-body-md text-on-surface bg-white/90 backdrop-blur-sm transition-all" type="text" value="National Institute of Technology"/>
+</div>
+</div>
+<!-- Target Exam Interest -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Primary Target Exam Track</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-outline text-[19px]">assignment_turned_in</span>
+<select class="w-full pl-10 pr-10 py-3 rounded-xl border border-outline-variant/80 focus:border-primary focus:ring-2 focus:ring-secondary-container/60 text-body-md font-body-md text-on-surface bg-white/90 appearance-none">
+<option selected="">GATE CS &amp; IT + TCS Placement Aptitude</option>
+<option>GATE Data Science &amp; AI (DA)</option>
+<option>UGC NET Computer Science</option>
+<option>ISRO / DRDO Scientist-B Exam</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-3.5 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-end gap-3 pt-4 border-t border-teal-900/10">
+<button class="px-5 py-2.5 rounded-xl border border-outline-variant bg-white/70 text-label-lg font-label-lg text-on-surface-variant hover:bg-white active:scale-95 transition-all" type="button">
+              Cancel
+            </button>
+<button class="px-6 py-2.5 rounded-xl bg-primary-container text-on-primary text-label-lg font-label-lg font-bold shadow-md hover:bg-primary active:scale-95 transition-all flex items-center gap-1.5" type="submit">
+<span class="material-symbols-outlined text-[18px]">check</span>
+              Save Changes
+            </button>
+</div>
+</form>
+</div>
+</section>
+<!-- TAB SECTION 2: Notification Preferences & In-App Alerts -->
+<section class="space-y-4 hidden" id="tab-notifications">
+<!-- Channel Preferences Card -->
+<div class="bg-white/92 backdrop-blur-md rounded-[24px] p-5 border border-white/60 shadow-sm space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-teal-900/10">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Delivery Channels</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Where would you like to receive updates?</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">tune</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+<label class="p-3 rounded-xl border border-primary/40 bg-secondary-container/20 flex flex-col items-center text-center cursor-pointer hover:bg-secondary-container/30 transition-colors">
+<input checked="" class="rounded text-primary focus:ring-primary mb-2" type="checkbox"/>
+<span class="material-symbols-outlined text-primary text-[20px]">notifications</span>
+<span class="text-label-md font-label-md font-bold text-on-surface mt-1">Push Alerts</span>
+</label>
+<label class="p-3 rounded-xl border border-primary/40 bg-secondary-container/20 flex flex-col items-center text-center cursor-pointer hover:bg-secondary-container/30 transition-colors">
+<input checked="" class="rounded text-primary focus:ring-primary mb-2" type="checkbox"/>
+<span class="material-symbols-outlined text-primary text-[20px]">mark_email_read</span>
+<span class="text-label-md font-label-md font-bold text-on-surface mt-1">Email Digest</span>
+</label>
+<label class="p-3 rounded-xl border border-primary/40 bg-secondary-container/20 flex flex-col items-center text-center cursor-pointer hover:bg-secondary-container/30 transition-colors">
+<input checked="" class="rounded text-primary focus:ring-primary mb-2" type="checkbox"/>
+<span class="material-symbols-outlined text-primary text-[20px]">chat</span>
+<span class="text-label-md font-label-md font-bold text-on-surface mt-1">WhatsApp</span>
+</label>
+<label class="p-3 rounded-xl border border-outline-variant/50 bg-white/70 flex flex-col items-center text-center cursor-pointer hover:bg-white transition-colors">
+<input class="rounded text-primary focus:ring-primary mb-2" type="checkbox"/>
+<span class="material-symbols-outlined text-outline text-[20px]">sms</span>
+<span class="text-label-md font-label-md text-on-surface mt-1">SMS Texts</span>
+</label>
+</div>
+</div>
+<!-- Category Switches -->
+<div class="bg-white/92 backdrop-blur-md rounded-[24px] p-5 border border-white/60 shadow-sm space-y-4">
+<h3 class="text-headline-sm font-headline-sm text-on-surface pb-2 border-b border-teal-900/10">Category Alerts</h3>
+<div class="space-y-3.5">
+<!-- Toggle 1 -->
+<div class="flex items-center justify-between gap-3 p-3 rounded-xl bg-white/70 border border-white/80">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">menu_book</span>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-on-surface">Course Announcements &amp; New Lectures</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Live class reminders, newly uploaded problem sets, and syllabus notes</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Toggle 2 -->
+<div class="flex items-center justify-between gap-3 p-3 rounded-xl bg-white/70 border border-white/80">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">quiz</span>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-on-surface">Live Mock Test &amp; Expiry Reminders</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Alerts 24 hours prior to National Full Length GATE Mock Test series</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Toggle 3 (Mandatory/Locked) -->
+<div class="flex items-center justify-between gap-3 p-3 rounded-xl bg-secondary-container/20 border border-secondary-container/40">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">card_giftcard</span>
+<div>
+<div class="flex items-center gap-1.5">
+<p class="text-label-lg font-label-lg font-bold text-on-surface">Referral Commission &amp; Payout Alerts</p>
+<span class="material-symbols-outlined text-outline text-[16px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Mandatory transactional notifications for UPI wallet payouts &amp; TDS receipts</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1 text-label-sm font-label-sm text-primary font-bold bg-secondary-container/50 px-2.5 py-1 rounded-full border border-teal-200">
+              Always Active
+            </div>
+</div>
+<!-- Toggle 4 -->
+<div class="flex items-center justify-between gap-3 p-3 rounded-xl bg-white/70 border border-white/80">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">live_help</span>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-on-surface">Doubt &amp; Support Ticket Updates</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Instant alerts when an educator or technical engineer responds to your ticket</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Recent History Feed -->
+<div class="bg-white/92 backdrop-blur-md rounded-[24px] p-5 border border-white/60 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Recent Alert History</h3>
+<button class="text-label-md font-label-md text-primary font-semibold hover:underline active:scale-95 transition-all" onclick="showToast('All notifications marked as read')">Mark All as Read</button>
+</div>
+<div class="divide-y divide-teal-900/10">
+<div class="py-3 flex items-start gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-primary mt-1.5 shrink-0 animate-ping"></span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<p class="text-label-lg font-label-lg font-bold text-on-surface">Commission Approved: +₹375</p>
+<span class="text-label-sm font-label-sm text-on-surface-variant">2 hrs ago</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Priya M. enrolled in GATE CS &amp; IT Comprehensive Batch via your code.</p>
+</div>
+</div>
+<div class="py-3 flex items-start gap-3 opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant mt-1.5 shrink-0"></span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<p class="text-label-lg font-label-lg font-bold text-on-surface">Course Expiry Alert</p>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">GATE CS &amp; IT foundation pack will expire in 5 days. Renew with early-bird discount.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB SECTION 3: Help & Support Ticket Desk -->
+<section class="space-y-4 hidden" id="tab-support">
+<!-- Need Help Banner -->
+<div class="bg-gradient-to-br from-primary-container via-teal-700 to-secondary text-on-primary rounded-[24px] p-5 shadow-md relative overflow-hidden">
+<div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-white/20 text-white font-semibold mb-2 backdrop-blur-xs">
+<span class="material-symbols-outlined text-[13px] animate-pulse">bolt</span>
+              Average response time: 24 mins
+            </span>
+<h3 class="text-headline-sm font-headline-sm font-bold">Need help with your learning or payments?</h3>
+<p class="text-body-sm font-body-sm text-on-primary-container mt-0.5">Our academic and tech desk operates 9 AM - 10 PM IST daily.</p>
+</div>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-primary text-label-lg font-label-lg font-bold shadow-md hover:bg-surface-container active:scale-95 transition-all shrink-0" onclick="openModal('new-ticket-modal')">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+            Raise New Ticket
+          </button>
+</div>
+</div>
+<!-- Quick Issue Chips -->
+<div class="space-y-2">
+<label class="text-label-md font-label-md text-on-surface font-semibold">Quickly Filter by Category:</label>
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md font-semibold bg-secondary-container/60 text-primary border border-secondary shadow-xs active:scale-95 transition-all">
+            All Issues
+          </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md font-medium bg-white/80 backdrop-blur-sm text-on-surface-variant border border-white/80 hover:border-primary active:scale-95 transition-all">
+            Course Access
+          </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md font-medium bg-white/80 backdrop-blur-sm text-on-surface-variant border border-white/80 hover:border-primary active:scale-95 transition-all">
+            Video/PDF Issue
+          </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md font-medium bg-white/80 backdrop-blur-sm text-on-surface-variant border border-white/80 hover:border-primary active:scale-95 transition-all">
+            Payment/UPI
+          </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md font-medium bg-white/80 backdrop-blur-sm text-on-surface-variant border border-white/80 hover:border-primary active:scale-95 transition-all">
+            Referral Commission
+          </button>
+</div>
+</div>
+<!-- Tickets List -->
+<div class="space-y-3">
+<!-- Active Ticket #TK-8492 -->
+<div class="bg-white/92 backdrop-blur-md rounded-[24px] p-5 border border-white/60 shadow-sm space-y-3">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-md bg-white/80 text-primary font-mono text-label-sm font-label-sm font-bold border border-teal-200">#TK-8492</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Course Player Track</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-bold bg-amber-100/90 text-amber-800 border border-amber-200">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+              In Progress
+            </span>
+</div>
+<div>
+<h4 class="text-label-lg font-label-lg font-bold text-on-surface">Video stuttering on Lesson 45 (Modular Arithmetic)</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Playback freezes repeatedly at timestamp 14:20 on high bitrate mode on Android app.</p>
+</div>
+<!-- Admin Response Callout -->
+<div class="p-3.5 rounded-xl bg-secondary-container/25 border border-secondary-container/50 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">support</span>
+<div class="text-body-sm font-body-sm">
+<p class="font-bold text-primary">Media Support Team Reply (18 mins ago):</p>
+<p class="text-on-surface mt-0.5">"Our media team re-encoded the video stream at multiple adaptive bitrates. Please verify now and let us know if issue persists."</p>
+</div>
+</div>
+</div>
+<!-- Resolved Ticket #TK-8201 -->
+<div class="bg-white/92 backdrop-blur-md rounded-[24px] p-5 border border-white/60 shadow-sm space-y-3 opacity-95">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-md bg-white/80 text-primary font-mono text-label-sm font-label-sm font-bold border border-teal-200">#TK-8201</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Referral Payout Desk</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-bold bg-secondary-container/60 text-on-secondary-container border border-secondary-container/50">
+<span class="material-symbols-outlined text-[14px]">check</span>
+              Resolved
+            </span>
+</div>
+<div>
+<h4 class="text-label-lg font-label-lg font-bold text-on-surface">UPI Commission settlement query</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Settlement of ₹1,500 transferred to VPA sharma.alex@okhdfcbank. Transaction reference UTR #39482914.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB SECTION 4: Account Security & Danger Zone -->
+<section class="space-y-5 hidden" id="tab-security">
+<!-- General Security Settings -->
+<div class="bg-white/92 backdrop-blur-md rounded-[24px] p-5 border border-white/60 shadow-sm space-y-4">
+<h3 class="text-headline-sm font-headline-sm text-on-surface pb-2 border-b border-teal-900/10">Security &amp; Device Access</h3>
+<div class="divide-y divide-teal-900/10">
+<!-- Change Password -->
+<div class="py-3 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">password</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-on-surface">Change Password</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Last updated 4 months ago</p>
+</div>
+</div>
+<button class="px-3.5 py-2 rounded-xl text-label-md font-label-md font-semibold text-primary border border-outline-variant bg-white/70 hover:bg-white active:scale-95 transition-all" onclick="showToast('Password change link sent to email')">
+              Update
+            </button>
+</div>
+<!-- Active Devices -->
+<div class="py-3 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">devices</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-on-surface">Active Devices &amp; Sessions</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">2 Devices Active (Android Mobile &amp; Chrome Mac)</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-secondary-container/50 text-primary border border-teal-200">
+              Secure
+            </span>
+</div>
+<!-- Two-Factor Authentication -->
+<div class="py-3 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-on-surface">Two-Step Verification (OTP)</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Active via registered phone number</p>
+</div>
+</div>
+<span class="text-label-md font-label-md text-primary font-bold">Enabled</span>
+</div>
+</div>
+</div>
+<!-- Danger Zone Card -->
+<div class="bg-red-50/85 backdrop-blur-md rounded-[24px] p-5 sm:p-6 border border-red-200 shadow-sm space-y-4">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center text-red-600 shrink-0">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm font-bold text-red-900">Delete Account &amp; Personal Data</h3>
+<p class="text-body-sm font-body-sm text-red-800/80 mt-1">
+              Permanently remove your personal profile and learning progress. Note: Financial and transactional tax records are preserved for compliance under Indian regulations.
+            </p>
+</div>
+</div>
+<div class="pt-3 border-t border-red-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="text-label-sm font-label-sm text-red-700">
+            Action is irreversible once confirmed.
+          </div>
+<button class="px-5 py-2.5 rounded-xl border-2 border-red-600 bg-white text-red-600 hover:bg-red-600 hover:text-white text-label-lg font-label-lg font-bold shadow-sm active:scale-95 transition-all flex items-center justify-center gap-1.5" onclick="openModal('delete-modal')">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+            Request Account Deletion
+          </button>
+</div>
+</div>
+</section>
+</main>
+<!-- DELETE ACCOUNT CONFIRMATION MODAL -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="delete-modal">
+<div class="bg-white/95 backdrop-blur-md max-w-md w-full rounded-[24px] p-6 border border-white/80 shadow-2xl space-y-4 animate-fadeInUp">
+<div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[28px]">delete_sweep</span>
+</div>
+<div class="text-center space-y-1">
+<h3 class="text-headline-sm font-headline-sm font-bold text-on-surface">Delete Account Request</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          You are about to submit an account deactivation and data purging request for <span class="font-bold text-on-surface">Alex Sharma</span>.
+        </p>
+</div>
+<div class="bg-red-50 rounded-xl p-3.5 border border-red-100 text-label-sm font-label-sm text-red-800 space-y-1">
+<p class="font-bold">• Course progress, lecture notes, &amp; badges will be lost immediately.</p>
+<p>• Pending referral payouts will require manual bank reconciliation.</p>
+<p>• Transaction history will be retained as per statutory Indian GST compliance.</p>
+</div>
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface">Confirm your password to proceed:</label>
+<input class="w-full px-4 py-2.5 rounded-xl border border-outline-variant focus:border-red-600 focus:ring-2 focus:ring-red-200 text-body-sm font-body-sm bg-white" placeholder="Enter current password" type="password"/>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<button class="flex-1 py-2.5 rounded-xl border border-outline-variant text-label-lg font-label-lg font-semibold text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" onclick="closeModal('delete-modal')">
+          Cancel
+        </button>
+<button class="flex-1 py-2.5 rounded-xl bg-red-600 text-white text-label-lg font-label-lg font-bold hover:bg-red-700 active:scale-95 transition-all" onclick="confirmDeletion()">
+          Delete My Account
+        </button>
+</div>
+</div>
+</div>
+<!-- RAISE NEW TICKET MODAL -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="new-ticket-modal">
+<div class="bg-white/95 backdrop-blur-md max-w-md w-full rounded-[24px] p-6 border border-white/80 shadow-2xl space-y-4 animate-fadeInUp">
+<div class="flex items-center justify-between pb-2 border-b border-teal-900/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">support_agent</span>
+<h3 class="text-headline-sm font-headline-sm font-bold text-on-surface">Raise Support Ticket</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" onclick="closeModal('new-ticket-modal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-3">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Issue Category</label>
+<select class="w-full px-3 py-2.5 rounded-xl border border-outline-variant text-body-sm font-body-sm bg-white">
+<option>Video Player / Lecture Streaming</option>
+<option>PDF Downloads &amp; Formula Sheets</option>
+<option>UPI Settlement / Referral Payout</option>
+<option>Account Credentials &amp; Verification</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Subject</label>
+<input class="w-full px-3 py-2.5 rounded-xl border border-outline-variant text-body-sm font-body-sm bg-white" placeholder="e.g. Video buffer on Lesson 45" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Detailed Explanation</label>
+<textarea class="w-full px-3 py-2.5 rounded-xl border border-outline-variant text-body-sm font-body-sm bg-white" placeholder="Describe what happened, error codes, or timestamps..." rows="3"></textarea>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<button class="flex-1 py-2.5 rounded-xl border border-outline-variant text-label-lg font-label-lg font-semibold text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" onclick="closeModal('new-ticket-modal')">
+          Cancel
+        </button>
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary text-label-lg font-label-lg font-bold shadow-md hover:bg-primary active:scale-95 transition-all" onclick="submitTicket()">
+          Submit Ticket
+        </button>
+</div>
+</div>
+</div>
+<!-- TOAST FEEDBACK NOTIFICATION -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface/95 backdrop-blur-md text-inverse-on-surface px-4 py-2.5 rounded-full text-label-md font-label-md shadow-xl transition-all duration-300 opacity-0 pointer-events-none flex items-center gap-2 border border-white/20" id="toast-message">
+<span class="material-symbols-outlined text-[18px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span id="toast-text">Changes saved</span>
+</div>
+<!-- SHARED BOTTOM NAVIGATION BAR -->
+<nav class="fixed bottom-0 left-0 w-full z-40 bg-white/85 backdrop-blur-md border-t border-white/60 shadow-lg px-4 py-2">
+<div class="max-w-2xl mx-auto flex justify-around items-center">
+<!-- 1. Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-transform duration-150" href="#home">
+<span class="material-symbols-outlined text-[24px]">school</span>
+<span class="text-label-sm font-label-sm mt-0.5">Home</span>
+</a>
+<!-- 2. Courses -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-transform duration-150" href="#courses">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+<span class="text-label-sm font-label-sm mt-0.5">Courses</span>
+</a>
+<!-- 3. My Courses -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-transform duration-150" href="#my-courses">
+<span class="material-symbols-outlined text-[24px]">play_circle</span>
+<span class="text-label-sm font-label-sm mt-0.5">My Courses</span>
+</a>
+<!-- 4. Referral -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-transform duration-150" href="#referral">
+<span class="material-symbols-outlined text-[24px]">card_giftcard</span>
+<span class="text-label-sm font-label-sm mt-0.5">Referral</span>
+</a>
+<!-- 5. Profile (ACTIVE DESTINATION) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-3.5 py-1.5 font-semibold shadow-xs active:scale-95 transition-transform duration-150 ring-2 ring-teal-500/20" href="#profile">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-bold">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Interactive JavaScript -->
+<script>
+    function switchTab(tabId) {
+      // Hide all tab sections
+      ['tab-details', 'tab-notifications', 'tab-support', 'tab-security'].forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) sec.classList.add('hidden');
+        const btn = document.getElementById('btn-' + id);
+        if (btn) {
+          btn.classList.remove('active', 'bg-primary-container', 'text-on-primary');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+
+      // Show selected tab
+      const selectedSec = document.getElementById(tabId);
+      if (selectedSec) {
+        selectedSec.classList.remove('hidden');
+        selectedSec.classList.add('animate-fadeInUp');
+      }
+
+      // Update button state
+      const selectedBtn = document.getElementById('btn-' + tabId);
+      if (selectedBtn) {
+        selectedBtn.classList.add('active');
+        selectedBtn.classList.remove('text-on-surface-variant');
+      }
+    }
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-message');
+      const text = document.getElementById('toast-text');
+      if (toast && text) {
+        text.textContent = message;
+        toast.classList.remove('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'pointer-events-none');
+        }, 3200);
+      }
+    }
+
+    function confirmDeletion() {
+      closeModal('delete-modal');
+      showToast('Account deletion ticket submitted to compliance team.');
+    }
+
+    function submitTicket() {
+      closeModal('new-ticket-modal');
+      showToast('Ticket created successfully! #TK-8501');
+    }
+  </script>
+</body></html>

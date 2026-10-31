@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Refer &amp; Earn - Alex | EduPrep</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Plus Jakarta Sans Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#0f766e",
+            "on-tertiary-container": "#dfedea",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#3d4947",
+            "surface-tint": "#006a63",
+            "secondary-fixed": "#71f8e4",
+            "background": "#f8f9ff",
+            "secondary-container": "#6df5e1",
+            "secondary": "#006b5f",
+            "on-tertiary-fixed": "#121e1c",
+            "tertiary-fixed-dim": "#bcc9c7",
+            "inverse-primary": "#80d5cb",
+            "primary-fixed-dim": "#80d5cb",
+            "inverse-on-surface": "#ebf1ff",
+            "on-primary-fixed": "#00201d",
+            "primary": "#005c55",
+            "secondary-fixed-dim": "#4fdbc8",
+            "tertiary-container": "#5f6c6a",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#3e4947",
+            "on-primary-container": "#a3faef",
+            "surface-bright": "#f8f9ff",
+            "surface-variant": "#d5e3fd",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#00504a",
+            "on-background": "#0d1c2f",
+            "tertiary": "#475452",
+            "error": "#ba1a1a",
+            "surface-container": "#e6eeff",
+            "on-secondary-fixed": "#00201c",
+            "surface-dim": "#ccdbf4",
+            "surface-container-highest": "#d5e3fd",
+            "tertiary-fixed": "#d7e5e2",
+            "surface": "#f8f9ff",
+            "primary-fixed": "#9cf2e8",
+            "outline": "#6e7977",
+            "error-container": "#ffdad6",
+            "outline-variant": "#bdc9c6",
+            "on-secondary-fixed-variant": "#005048",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#233144",
+            "on-secondary-container": "#006f64",
+            "on-surface": "#0d1c2f",
+            "surface-container-low": "#eff4ff",
+            "surface-container-high": "#dde9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-2xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "margin-lg": "1.5rem",
+            "margin": "1.25rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "1.75rem",
+            "gutter-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      background: linear-gradient(135deg, #a7f3d0 0%, #99f6e4 25%, #bae6fd 60%, #e0e7ff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      min-height: max(884px, 100dvh);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0d1c2f;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    @keyframes softPulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.25);
+      }
+      50% {
+        box-shadow: 0 0 10px 3px rgba(217, 119, 6, 0.4);
+      }
+    }
+
+    .pending-pulse-badge {
+      animation: softPulseGlow 2.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="antialiased pb-28 text-on-surface">
+<!-- TOP APP BAR (Shared Components JSON Anchor) -->
+<header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-white/60 shadow-xs">
+<div class="flex justify-between items-center w-full px-5 py-3 max-w-2xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-secondary-container/50 border border-white/80 overflow-hidden flex items-center justify-center text-primary font-bold shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Close up profile avatar of a motivated young engineering student wearing a minimal casual teal shirt smiling softly in bright study room natural window lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1ZohqdcPCSriuo4dnat7NyDQZSlgQSlmcS8AZT3c2Le4---wds2ZS-Pc7Cosv1UxKvLhu8mZ3qAG0xnIbE7L_AwAgzjwmOXniTUEZLYs_GVjCh8JxiT6mcw3XsSh4_ouat1ZZ0ZW76Qvfhey7ZQfp0RThItC9K5N_OCPBZqMpxR6a3v5e6Xv5nzrGiPvSVOeqMiLXEea5W68CsboU5YKuGCV8gCGDBHQMVhV6zokb"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-white"></span>
+</div>
+<div>
+<h1 class="text-headline-sm font-headline-sm text-primary tracking-tight">Hello, Alex</h1>
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Partner Tier: </span>
+<span class="inline-flex items-center px-1.5 py-0.2 text-[10px] font-semibold bg-secondary-container text-on-secondary-container rounded">Silver Scholar</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="p-2 rounded-full text-on-surface-variant bg-white/70 hover:bg-white active:scale-95 transition-all duration-150 shadow-xs border border-white/60" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS CONTAINER (Max width 680px for focused learning ergonomics) -->
+<main class="max-w-2xl mx-auto px-5 pt-5 space-y-6">
+<!-- PAGE HERO & INTRO -->
+<section class="space-y-1.5 animate-fadeInUp">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-white/80 backdrop-blur-sm text-primary shadow-xs border border-white/60">
+<span class="material-symbols-outlined text-[18px]">card_giftcard</span>
+</span>
+<span class="text-label-md font-label-md text-primary tracking-wide font-bold uppercase">Affiliate Program</span>
+</div>
+<span class="text-label-sm font-label-sm px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur-sm border border-white/60 text-on-surface-variant shadow-xs">
+          15% Direct Payout
+        </span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface tracking-tight">Refer &amp; Earn</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+        Share your referral code with friends and track your rewards.
+      </p>
+</section>
+<!-- INCENTIVE RULE BANNER -->
+<section class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary-container to-primary text-on-primary p-4 shadow-sm border border-white/30 animate-fadeInUp">
+<div class="relative z-10 flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white text-[20px]">percent</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-label-lg font-label-lg font-bold text-white tracking-wide">Mutual Learning Incentive</h3>
+<p class="text-body-sm font-body-sm text-on-primary-container leading-relaxed">
+            Earn 15% cash commission on every friend's first course purchase. Your friend receives 10% instant discount!
+          </p>
+</div>
+</div>
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-secondary-container/20 pointer-events-none blur-xl"></div>
+</section>
+<!-- UNIQUE REFERRAL CODE & LINK CARD (Bento Unit 1) -->
+<section class="bg-white/92 backdrop-blur-md rounded-2xl p-5 border border-white/60 shadow-sm space-y-4 animate-fadeInUp">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">key</span>
+<h3 class="text-label-lg font-label-lg font-bold text-on-surface">My Referral Code</h3>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-semibold bg-secondary-container/40 px-2 py-0.5 rounded-md border border-secondary-container/30">
+          Active &amp; Verified
+        </span>
+</div>
+<!-- Referral Code Box -->
+<div class="bg-white/80 rounded-xl p-3 border border-white/80 shadow-xs flex items-center justify-between gap-3">
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Unique Affiliate Code</p>
+<p class="text-headline-md font-headline-md font-extrabold tracking-wider text-primary" id="ref-code-value">ALEX99</p>
+</div>
+<button class="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-container text-on-primary text-label-md font-label-md font-bold shadow-sm hover:opacity-95 active:scale-95 transition-all" id="copy-code-btn" onclick="copyReferralCode()" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span id="copy-code-label">Copy Code</span>
+</button>
+</div>
+<!-- Full URL Box -->
+<div class="space-y-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant font-medium">Direct Referral Link</label>
+<div class="flex items-center gap-2">
+<div class="flex-1 px-3 py-2 rounded-xl bg-white/80 border border-white/80 text-on-surface text-body-sm font-body-sm truncate select-all font-mono text-[13px] shadow-xs">
+<span id="ref-url-value">https://eduprep.app/signup?ref=ALEX99</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl border border-white/80 text-primary bg-white/80 hover:bg-white text-label-md font-label-md font-semibold active:scale-95 transition-all flex items-center gap-1 shadow-xs" id="copy-link-btn" onclick="copyReferralLink()" type="button">
+<span class="material-symbols-outlined text-[16px]">link</span>
+<span id="copy-link-label">Copy Link</span>
+</button>
+</div>
+</div>
+<!-- Quick Social Sharing Actions -->
+<div class="pt-2 border-t border-slate-200/60 space-y-2">
+<p class="text-label-sm font-label-sm text-on-surface-variant font-medium">Quick Share with Study Groups</p>
+<div class="grid grid-cols-3 gap-2.5">
+<!-- WhatsApp Action -->
+<a class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#25D366]/15 text-[#0F766E] border border-[#25D366]/30 hover:bg-[#25D366]/25 active:scale-95 transition-all text-label-md font-label-md font-semibold shadow-xs" href="https://api.whatsapp.com/send?text=Use%20my%20code%20ALEX99%20to%20get%2010%25%20off%20all%20EduPrep%20test%20series!%20https://eduprep.app/signup?ref=ALEX99" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-[#128C7E]">chat</span>
+<span>WhatsApp</span>
+</a>
+<!-- Native Share Action -->
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-white/80 border border-white/80 hover:bg-white text-primary active:scale-95 transition-all text-label-md font-label-md font-semibold shadow-xs" onclick="triggerNativeShare()" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Share Menu</span>
+</button>
+<!-- Email Action -->
+<a class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-white/80 border border-white/80 hover:bg-white text-primary active:scale-95 transition-all text-label-md font-label-md font-semibold shadow-xs" href="mailto:?subject=Join%20EduPrep%20with%2010%25%20Discount&amp;body=Hey!%20Join%20EduPrep%20and%20use%20my%20referral%20code%20ALEX99%20to%20get%2010%25%20off:%20https://eduprep.app/signup?ref=ALEX99">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>Email</span>
+</a>
+</div>
+</div>
+</section>
+<!-- KPI STATS OVERVIEW (Bento Grid 4 Cards + Metric Bar) -->
+<section class="space-y-3 animate-fadeInUp">
+<div class="flex items-center justify-between">
+<h3 class="text-label-lg font-label-lg font-bold text-on-surface">Reward &amp; Performance Metrics</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Payout cycle: Bi-weekly</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<!-- Card 1: Total Referrals -->
+<div class="bg-white/92 backdrop-blur-md p-3.5 rounded-2xl border border-white/60 shadow-sm flex flex-col justify-between hover:bg-white/95 transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Total Referrals</span>
+<span class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[15px]">group</span>
+</span>
+</div>
+<div>
+<p class="text-headline-md font-headline-md font-bold text-on-surface">12</p>
+<p class="text-label-sm font-label-sm text-primary font-medium mt-0.5">8 Converted</p>
+</div>
+</div>
+<!-- Card 2: Pending Rewards -->
+<div class="bg-white/92 backdrop-blur-md p-3.5 rounded-2xl border border-white/60 shadow-sm flex flex-col justify-between hover:bg-white/95 transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Pending</span>
+<span class="w-6 h-6 rounded-lg bg-amber-500/15 text-amber-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">pending_actions</span>
+</span>
+</div>
+<div>
+<p class="text-headline-md font-headline-md font-bold text-amber-700">₹950</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-0.5">In 7-day review</p>
+</div>
+</div>
+<!-- Card 3: Approved Rewards -->
+<div class="bg-white/92 backdrop-blur-md p-3.5 rounded-2xl border border-white/60 shadow-sm flex flex-col justify-between hover:bg-white/95 transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Approved</span>
+<span class="w-6 h-6 rounded-lg bg-secondary-container/50 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">task_alt</span>
+</span>
+</div>
+<div>
+<p class="text-headline-md font-headline-md font-bold text-primary">₹1,800</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-0.5">Next Friday batch</p>
+</div>
+</div>
+<!-- Card 4: Paid Rewards -->
+<div class="bg-white/92 backdrop-blur-md p-3.5 rounded-2xl border border-white/60 shadow-sm flex flex-col justify-between hover:bg-white/95 transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Paid Out</span>
+<span class="w-6 h-6 rounded-lg bg-emerald-500/15 text-emerald-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">payments</span>
+</span>
+</div>
+<div>
+<p class="text-headline-md font-headline-md font-bold text-emerald-800">₹4,250</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-0.5">Via UPI transfer</p>
+</div>
+</div>
+</div>
+<!-- Additional Aggregate Summary Bar -->
+<div class="bg-white/92 backdrop-blur-md p-3 rounded-xl border border-white/60 shadow-sm flex items-center justify-around text-center">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Lifetime Earned</span>
+<p class="text-label-lg font-label-lg font-bold text-primary">₹7,000</p>
+</div>
+<div class="w-px h-8 bg-slate-200"></div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Qualifying Sales</span>
+<p class="text-label-lg font-label-lg font-bold text-on-surface">8 Purchases</p>
+</div>
+<div class="w-px h-8 bg-slate-200"></div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Conversion Rate</span>
+<p class="text-label-lg font-label-lg font-bold text-secondary">66.7%</p>
+</div>
+</div>
+</section>
+<!-- REFERRAL STATUS TABS & HISTORY (Interactive multi-stage tracking) -->
+<section class="space-y-3 animate-fadeInUp">
+<div class="flex items-center justify-between">
+<h3 class="text-label-lg font-label-lg font-bold text-on-surface">Referred Students &amp; Orders</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Live audit status</span>
+</div>
+<!-- Segmented Control / Tabs -->
+<div class="bg-white/80 backdrop-blur-md p-1 rounded-xl border border-white/60 shadow-xs flex gap-1 custom-scroll overflow-x-auto">
+<button class="flex-1 py-1.5 px-3 rounded-lg text-label-md font-label-md font-semibold text-center transition-all bg-white text-primary shadow-xs" id="tab-btn-pending" onclick="switchReferralTab('pending')" type="button">
+          Pending (2)
+        </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg text-label-md font-label-md font-semibold text-center transition-all text-on-surface-variant hover:text-on-surface" id="tab-btn-approved" onclick="switchReferralTab('approved')" type="button">
+          Approved (3)
+        </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg text-label-md font-label-md font-semibold text-center transition-all text-on-surface-variant hover:text-on-surface" id="tab-btn-paid" onclick="switchReferralTab('paid')" type="button">
+          Paid (5)
+        </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg text-label-md font-label-md font-semibold text-center transition-all text-on-surface-variant hover:text-on-surface" id="tab-btn-all" onclick="switchReferralTab('all')" type="button">
+          All History
+        </button>
+</div>
+<!-- Tab Content Area -->
+<div class="space-y-3" id="referrals-container">
+<!-- CARD 1: PENDING RECORD -->
+<article class="referral-card bg-white/92 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm space-y-3 transition-all" data-tab="pending">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-amber-500/15 text-amber-800 font-bold flex items-center justify-center text-label-lg font-label-lg border border-amber-500/20">
+                RS
+              </div>
+<div>
+<h4 class="text-label-lg font-label-lg font-bold text-on-surface">Rahul S. <span class="text-body-sm font-normal text-on-surface-variant">(rah***@gmail.com)</span></h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">menu_book</span>
+<span>TCS NQT 2025 Comprehensive Prep</span>
+</p>
+</div>
+</div>
+<span class="pending-pulse-badge px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-amber-500/15 text-amber-800 border border-amber-500/30 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+              Pending Review
+            </span>
+</div>
+<div class="bg-white/80 rounded-xl p-3 grid grid-cols-2 sm:grid-cols-3 gap-2 text-label-sm font-label-sm border border-white/80 shadow-xs">
+<div>
+<span class="text-on-surface-variant block">Course Purchase</span>
+<span class="font-bold text-on-surface">₹1,499</span>
+</div>
+<div>
+<span class="text-on-surface-variant block">Your Commission (15%)</span>
+<span class="font-bold text-amber-800 text-[13px]">+₹225</span>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<span class="text-on-surface-variant block">Status Detail</span>
+<span class="text-on-surface font-medium">7-Day lock active (Ends 22 Nov)</span>
+</div>
+</div>
+</article>
+<!-- CARD 2: APPROVED RECORD -->
+<article class="referral-card bg-white/92 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm space-y-3 transition-all" data-tab="approved">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/50 text-primary font-bold flex items-center justify-center text-label-lg font-label-lg border border-secondary-container">
+                PM
+              </div>
+<div>
+<h4 class="text-label-lg font-label-lg font-bold text-on-surface">Priya M. <span class="text-body-sm font-normal text-on-surface-variant">(pri***@gmail.com)</span></h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">menu_book</span>
+<span>GATE CS &amp; IT 2025 Test Series</span>
+</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-secondary-container/40 text-on-secondary-container border border-secondary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+              Approved
+            </span>
+</div>
+<div class="bg-white/80 rounded-xl p-3 grid grid-cols-2 sm:grid-cols-3 gap-2 text-label-sm font-label-sm border border-white/80 shadow-xs">
+<div>
+<span class="text-on-surface-variant block">Course Purchase</span>
+<span class="font-bold text-on-surface">₹2,499</span>
+</div>
+<div>
+<span class="text-on-surface-variant block">Your Commission (15%)</span>
+<span class="font-bold text-primary text-[13px]">+₹375</span>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<span class="text-on-surface-variant block">Payout Schedule</span>
+<span class="text-on-surface font-semibold text-secondary">Scheduled for Friday payout</span>
+</div>
+</div>
+</article>
+<!-- CARD 3: PAID RECORD -->
+<article class="referral-card bg-white/92 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm space-y-3 transition-all" data-tab="paid">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-emerald-500/15 text-emerald-800 font-bold flex items-center justify-center text-label-lg font-label-lg border border-emerald-500/20">
+                AK
+              </div>
+<div>
+<h4 class="text-label-lg font-label-lg font-bold text-on-surface">Amit K. <span class="text-body-sm font-normal text-on-surface-variant">(ami***@gmail.com)</span></h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">menu_book</span>
+<span>Banking Prelims Quant Masterclass</span>
+</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-emerald-500/15 text-emerald-800 border border-emerald-500/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              Paid
+            </span>
+</div>
+<div class="bg-white/80 rounded-xl p-3 grid grid-cols-2 sm:grid-cols-3 gap-2 text-label-sm font-label-sm border border-white/80 shadow-xs">
+<div>
+<span class="text-on-surface-variant block">Course Purchase</span>
+<span class="font-bold text-on-surface">₹999</span>
+</div>
+<div>
+<span class="text-on-surface-variant block">Paid Commission</span>
+<span class="font-bold text-emerald-800 text-[13px]">+₹150</span>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<span class="text-on-surface-variant block">Payment Ref / Date</span>
+<span class="text-on-surface font-mono text-[11px]">UPI/240981928 (14 Nov)</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- COMMISSION LIFECYCLE & SECURITY AUDIT POLICY -->
+<section class="bg-white/92 backdrop-blur-md rounded-2xl p-5 border border-white/60 shadow-sm space-y-4 animate-fadeInUp">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">account_tree</span>
+<h3 class="text-label-lg font-label-lg font-bold text-on-surface">Commission &amp; Payout Policy</h3>
+</div>
+<!-- Lifecycle Steps -->
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-2 pt-1">
+<div class="p-2.5 rounded-xl bg-white/80 border border-white/80 shadow-xs relative">
+<span class="text-label-sm font-label-sm font-bold text-primary block">Step 01</span>
+<span class="text-body-sm font-body-sm font-medium text-on-surface block mt-1">Friend Signs Up</span>
+<span class="text-[11px] text-on-surface-variant">Uses code ALEX99 during registration.</span>
+</div>
+<div class="p-2.5 rounded-xl bg-white/80 border border-white/80 shadow-xs">
+<span class="text-label-sm font-label-sm font-bold text-primary block">Step 02</span>
+<span class="text-body-sm font-body-sm font-medium text-on-surface block mt-1">Course Purchase</span>
+<span class="text-[11px] text-on-surface-variant">Friend gets 10% instant discount.</span>
+</div>
+<div class="p-2.5 rounded-xl bg-white/80 border border-white/80 shadow-xs">
+<span class="text-label-sm font-label-sm font-bold text-primary block">Step 03</span>
+<span class="text-body-sm font-body-sm font-medium text-on-surface block mt-1">7-Day Refund Lock</span>
+<span class="text-[11px] text-on-surface-variant">Automated compliance window.</span>
+</div>
+<div class="p-2.5 rounded-xl bg-white/80 border border-white/80 shadow-xs">
+<span class="text-label-sm font-label-sm font-bold text-primary block">Step 04</span>
+<span class="text-body-sm font-body-sm font-medium text-on-surface block mt-1">Auto Payout</span>
+<span class="text-[11px] text-on-surface-variant">Direct UPI credit every Friday.</span>
+</div>
+</div>
+<!-- Anti-fraud policy banner -->
+<div class="flex items-start gap-2.5 p-3 rounded-xl bg-white/80 border border-white/80 text-body-sm font-body-sm text-on-surface-variant shadow-xs">
+<span class="material-symbols-outlined text-amber-700 text-[18px] shrink-0 mt-0.5">verified_user</span>
+<p class="text-[12px] leading-relaxed">
+<strong class="text-on-surface font-semibold">Integrity Protocol:</strong> Self-referrals, proxy devices, and duplicate payment claims are strictly prohibited and automatically audited prior to each payout cycle.
+        </p>
+</div>
+</section>
+</main>
+<!-- FLOATING TOAST NOTIFICATION -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-inverse-surface text-inverse-on-surface text-label-md font-label-md shadow-lg transition-all duration-300 opacity-0 pointer-events-none translate-y-2 flex items-center gap-2" id="toast">
+<span class="material-symbols-outlined text-[18px] text-secondary-container">done</span>
+<span id="toast-message">Copied to clipboard</span>
+</div>
+<!-- BOTTOM NAVIGATION DOCK (Shared Components JSON Anchor) -->
+<!-- Contextual State Lock: Active Item mapped to 'Referral' (Index 3) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-white/90 backdrop-blur-md shadow-lg border-t border-white/60">
+<!-- Item 0: Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 active:scale-95 transition-transform duration-150 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[22px]">school</span>
+<span class="text-label-sm font-label-sm mt-0.5">Home</span>
+</a>
+<!-- Item 1: Courses -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 active:scale-95 transition-transform duration-150 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+<span class="text-label-sm font-label-sm mt-0.5">Courses</span>
+</a>
+<!-- Item 2: My Courses -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 active:scale-95 transition-transform duration-150 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[22px]">play_circle</span>
+<span class="text-label-sm font-label-sm mt-0.5">My Courses</span>
+</a>
+<!-- Item 3: Referral (ACTIVE SEMANTIC MATCH) -->
+<!-- Executing style_active_navigation: bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-full px-3 py-1.5 font-semibold -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-3 py-1.5 font-semibold active:scale-95 transition-transform duration-150 shadow-xs" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">card_giftcard</span>
+<span class="text-label-sm font-label-sm mt-0.5">Referral</span>
+</a>
+<!-- Item 4: Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 active:scale-95 transition-transform duration-150 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[22px]">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">Profile</span>
+</a>
+</nav>
+<!-- INTERACTION SCRIPTS -->
+<script>
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+      toastMessage.innerText = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+      }, 2200);
+    }
+
+    function copyReferralCode() {
+      const code = document.getElementById('ref-code-value').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const label = document.getElementById('copy-code-label');
+        label.innerText = 'Copied!';
+        showToast('Referral code ALEX99 copied!');
+        setTimeout(() => {
+          label.innerText = 'Copy Code';
+        }, 2000);
+      });
+    }
+
+    function copyReferralLink() {
+      const link = document.getElementById('ref-url-value').innerText;
+      navigator.clipboard.writeText(link).then(() => {
+        const label = document.getElementById('copy-link-label');
+        label.innerText = 'Copied!';
+        showToast('Referral link copied to clipboard!');
+        setTimeout(() => {
+          label.innerText = 'Copy Link';
+        }, 2000);
+      });
+    }
+
+    function triggerNativeShare() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Join EduPrep with Alex',
+          text: 'Use my referral code ALEX99 to get an instant 10% discount on test prep courses!',
+          url: 'https://eduprep.app/signup?ref=ALEX99',
+        }).catch(() => {});
+      } else {
+        copyReferralLink();
+      }
+    }
+
+    function switchReferralTab(tab) {
+      const tabs = ['pending', 'approved', 'paid', 'all'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (!btn) return;
+        if (t === tab) {
+          btn.className = 'flex-1 py-1.5 px-3 rounded-lg text-label-md font-label-md font-semibold text-center transition-all bg-white text-primary shadow-xs';
+        } else {
+          btn.className = 'flex-1 py-1.5 px-3 rounded-lg text-label-md font-label-md font-semibold text-center transition-all text-on-surface-variant hover:text-on-surface';
+        }
+      });
+
+      const cards = document.querySelectorAll('.referral-card');
+      cards.forEach(card => {
+        if (tab === 'all') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.getAttribute('data-tab') === tab) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+  </script>
+</body></html>
